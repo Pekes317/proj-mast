@@ -14,6 +14,7 @@ export class PmLogoComponent implements OnInit {
   }
 
   toHome() {
+    console.log('click');
     this.router.navigate(['']);
   }
 }

@@ -9,6 +9,7 @@ import 'rxjs/add/operator/mergeMap';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  darkTheme: boolean = false;
 
   constructor(private active: ActivatedRoute,
     private router: Router,

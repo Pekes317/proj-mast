@@ -1,0 +1,50 @@
+@import '../theme/app.theme';
+@mixin nav-btns($top: 0) {
+  .active {
+    color: md-color($pm-primary);
+  }
+  .nav-btns {
+		display: inline-block;
+		width: 100%;
+
+    &:hover {
+      position: relative;
+      md-icon {
+        color: transparent;
+      }
+      &:after {
+        content: attr(name);
+        font-weight: 600;
+        left: 0;
+				top: $top;
+        position: absolute;
+				text-align: center;
+        width: 100%;
+      }
+    }
+  }
+}
+
+nav {
+  padding: .75rem;
+  position: relative;
+  @include nav-btns;
+  .mobile-menu-btn {
+    position: absolute;
+    right: .75rem;
+  }
+}
+
+.mobile-menu {
+  width: 6rem;
+	@include nav-btns(1rem);
+}
+
+.my-content {
+	padding: .75rem;
+}
+
+.dark-toggle {
+	float: left;
+	padding: 0 .75rem;
+}

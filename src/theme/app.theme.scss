@@ -24,11 +24,11 @@ $pm-theme: md-light-theme($pm-primary, $pm-accent, $pm-warn);
 @include angular-material-theme($pm-theme);
 
 .pm-dark {
-	$dark-primary: md-palette($md-green, A700);
-  $dark-accent:  md-palette($md-blue-grey, 400, 700, 200);
-  $dark-warn:    md-palette($md-deep-orange);
+	$pm-primary: md-palette($md-green, A700);
+  $pm-accent:  md-palette($md-blue-grey, 400, 700, 200);
+  $pm-warn:    md-palette($md-deep-orange);
 
-  $dark-theme: md-dark-theme($dark-primary, $dark-accent, $dark-warn);
+  $dark-theme: md-dark-theme($pm-primary, $pm-accent, $pm-warn);
 
   @include angular-material-theme($dark-theme);
 }

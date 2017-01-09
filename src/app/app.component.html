@@ -1,1 +1,49 @@
-<router-outlet></router-outlet>
+<div [class.pm-dark]="darkTheme">
+  <md-sidenav-container fullscreen>
+    <nav fxLayout="row" fxLayoutAlign="space-between center" fxLayoutAlign.xs="center">
+      <app-pm-logo></app-pm-logo>
+      <div fxHide="false" fxHide.xs>
+        <a name="Home" class="nav-btns" routerLink="/" md-button routerLinkActive="active">
+          <md-icon>home</md-icon>
+        </a>
+        <a name="Bio" class="nav-btns" md-button routerLinkActive="active">
+          <md-icon>person</md-icon>
+        </a>
+        <a name="Experience" class="nav-btns" md-button routerLinkActive="active">
+          <md-icon>school</md-icon>
+        </a>
+        <a name="Contact" class="nav-btns" md-button routerLinkActive="active">
+          <md-icon>email</md-icon>
+        </a>
+      </div>
+      <div fxHide="false" fxHide.xs>&nbsp;</div>
+      <div class="mobile-menu-btn" fxFlexAlign="center" fxShow="false" fxShow.xs>
+        <button md-icon-button (click)="mobile.toggle()">
+        <md-icon>menu</md-icon>
+      </button>
+      </div>
+    </nav>
+    <md-sidenav #mobile align="end">
+      <md-nav-list class="mobile-menu">
+        <a name="Home" class="nav-btns" routerLink="/" md-list-item routerLinkActive="active" (click)="mobile.close()">
+          <md-icon class="md-list-text">home</md-icon>
+        </a>
+        <a name="Bio" class="nav-btns" md-list-item routerLinkActive="active" (click)="mobile.close()">
+          <md-icon class="md-list-text">person</md-icon>
+        </a>
+        <a name="Experience" class="nav-btns" md-list-item routerLinkActive="active" (click)="mobile.close()">
+          <md-icon class="md-list-text">school</md-icon>
+        </a>
+        <a name="Contact" class="nav-btns" md-list-item routerLinkActive="active" (click)="mobile.close()">
+          <md-icon class="md-list-text">email</md-icon>
+        </a>
+      </md-nav-list>
+    </md-sidenav>
+    <div class="dark-toggle">
+      <md-slide-toggle [(ngModel)]="darkTheme">Dark Mode</md-slide-toggle>
+    </div>
+    <main class="my-content">
+      <router-outlet></router-outlet>
+    </main>
+  </md-sidenav-container>
+</div>
