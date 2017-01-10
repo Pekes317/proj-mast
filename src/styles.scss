@@ -10,3 +10,7 @@ body {
 		margin: 8px;
 	}
 }
+
+.md-slide-toggle-label {
+	flex-basis: auto !important; //ie-fix
+}

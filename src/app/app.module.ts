@@ -11,7 +11,10 @@ import { HomeComponent } from './home/home.component';
 import { PmLogoComponent } from './pm-logo/pm-logo.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent, data: { title: 'Project Mast' } }
+  { path: '', component: HomeComponent, data: { title: 'Project Mast' } },
+  { path: 'bio', component: HomeComponent, data: { title: 'Bio | Project Mast' } },
+  { path: 'experience', component: HomeComponent, data: { title: 'Experience | Project Mast' } },
+  { path: 'contact', component: HomeComponent, data: { title: 'Contact | Project Mast' } }
 ];
 
 @NgModule({

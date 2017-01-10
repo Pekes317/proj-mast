@@ -2,18 +2,9 @@
   <md-sidenav-container fullscreen>
     <nav fxLayout="row" fxLayoutAlign="space-between center" fxLayoutAlign.xs="center">
       <app-pm-logo></app-pm-logo>
-      <div fxHide="false" fxHide.xs>
-        <a name="Home" class="nav-btns" routerLink="/" md-button routerLinkActive="active">
-          <md-icon>home</md-icon>
-        </a>
-        <a name="Bio" class="nav-btns" md-button routerLinkActive="active">
-          <md-icon>person</md-icon>
-        </a>
-        <a name="Experience" class="nav-btns" md-button routerLinkActive="active">
-          <md-icon>school</md-icon>
-        </a>
-        <a name="Contact" class="nav-btns" md-button routerLinkActive="active">
-          <md-icon>email</md-icon>
+      <div class="ie-fix" fxHide="false" fxHide.xs>
+        <a *ngFor="let item of navItems" [name]="item.name" class="nav-btns" [routerLink]="item.path" md-button routerLinkActive="active" [routerLinkActiveOptions]="item.match">
+          <md-icon>{{item.icon}}</md-icon>
         </a>
       </div>
       <div fxHide="false" fxHide.xs>&nbsp;</div>
@@ -25,25 +16,16 @@
     </nav>
     <md-sidenav #mobile align="end">
       <md-nav-list class="mobile-menu">
-        <a name="Home" class="nav-btns" routerLink="/" md-list-item routerLinkActive="active" (click)="mobile.close()">
-          <md-icon class="md-list-text">home</md-icon>
-        </a>
-        <a name="Bio" class="nav-btns" md-list-item routerLinkActive="active" (click)="mobile.close()">
-          <md-icon class="md-list-text">person</md-icon>
-        </a>
-        <a name="Experience" class="nav-btns" md-list-item routerLinkActive="active" (click)="mobile.close()">
-          <md-icon class="md-list-text">school</md-icon>
-        </a>
-        <a name="Contact" class="nav-btns" md-list-item routerLinkActive="active" (click)="mobile.close()">
-          <md-icon class="md-list-text">email</md-icon>
+        <a #btns *ngFor="let item of navItems" [name]="item.name" class="nav-btns" [routerLink]="item.path" md-list-item routerLinkActive="active" (click)="mobile.close()" [routerLinkActiveOptions]="item.match">
+          <md-icon>{{item.icon}}</md-icon>
         </a>
       </md-nav-list>
     </md-sidenav>
-    <div class="dark-toggle">
-      <md-slide-toggle [(ngModel)]="darkTheme">Dark Mode</md-slide-toggle>
-    </div>
     <main class="my-content">
       <router-outlet></router-outlet>
     </main>
+    <div class="dark-toggle">
+      <md-slide-toggle [(ngModel)]="darkTheme">Dark Mode</md-slide-toggle>
+    </div>
   </md-sidenav-container>
 </div>

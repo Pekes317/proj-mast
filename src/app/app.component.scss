@@ -1,12 +1,14 @@
 @import '../theme/app.theme';
 @mixin nav-btns($top: 0) {
   .active {
-    color: md-color($pm-primary);
+    color: md-color($pm-primary) !important;
+  }
+  .ie-fix {
+    flex: 0 0 auto;
   }
   .nav-btns {
-		display: inline-block;
-		width: 100%;
-
+    display: inline-block;
+    width: 100%;
     &:hover {
       position: relative;
       md-icon {
@@ -16,9 +18,9 @@
         content: attr(name);
         font-weight: 600;
         left: 0;
-				top: $top;
+        top: $top;
         position: absolute;
-				text-align: center;
+        text-align: center;
         width: 100%;
       }
     }
@@ -36,15 +38,16 @@ nav {
 }
 
 .mobile-menu {
-  width: 6rem;
-	@include nav-btns(1rem);
+  width: 6.5rem;
+  @include nav-btns(1rem);
 }
 
 .my-content {
-	padding: .75rem;
+  padding: .75rem;
 }
 
 .dark-toggle {
-	float: left;
-	padding: 0 .75rem;
+  position: fixed;
+  bottom: 0;
+  padding: 0 .75rem;
 }
