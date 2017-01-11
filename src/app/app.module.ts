@@ -9,6 +9,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PmLogoComponent } from './pm-logo/pm-logo.component';
+import { SkylineComponent } from './skyline/skyline.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'Project Mast' } },
@@ -21,7 +22,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    PmLogoComponent
+    PmLogoComponent,
+    SkylineComponent
   ],
   imports: [
     BrowserModule,
