@@ -1,34 +1,8 @@
 @import '../theme/app.theme';
-@mixin nav-btns($top: 0) {
-  .active {
-    color: md-color($pm-primary) !important;
-  }
-  .ie-fix {
-    flex: 0 0 auto;
-  }
-  .nav-btns {
-    display: inline-block;
-    width: 100%;
-    &:hover {
-      position: relative;
-      md-icon {
-        color: transparent;
-      }
-      &:after {
-        content: attr(name);
-        font-weight: 600;
-        left: 0;
-        top: $top;
-        position: absolute;
-        text-align: center;
-        width: 100%;
-      }
-    }
-  }
-}
+@import '../theme/app.mixins';
 
 nav {
-  padding: .75rem;
+  @include pm-padding;
   position: relative;
   @include nav-btns;
   .mobile-menu-btn {
@@ -43,12 +17,9 @@ nav {
 }
 
 .my-content {
-  padding: .75rem;
+   @include pm-padding;
 }
 
 .dark-toggle {
-  bottom: 0;
-  padding: 0 .75rem;
-  position: fixed;
-  width: 100%;
+  @include pm-padding(0);
 }

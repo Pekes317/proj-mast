@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PmLogoComponent } from './pm-logo/pm-logo.component';
 import { SkylineComponent } from './skyline/skyline.component';
+import { PmHeroComponent } from './pm-hero/pm-hero.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'Project Mast' } },
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     PmLogoComponent,
-    SkylineComponent
+    SkylineComponent,
+    PmHeroComponent
   ],
   imports: [
     BrowserModule,

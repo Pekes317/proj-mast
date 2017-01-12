@@ -1,0 +1,32 @@
+@mixin nav-btns($top: 0) {
+  .active {
+    color: md-color($pm-primary) !important;
+  }
+  .ie-fix {
+    flex: 0 0 auto;
+  }
+  .nav-btns {
+    display: inline-block;
+    width: 100%;
+    &:hover {
+      position: relative;
+      md-icon {
+        color: transparent;
+      }
+      &:after {
+        content: attr(name);
+        font-weight: 600;
+        left: 0;
+        top: $top;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+@mixin pm-padding($vertical: .75rem, $horizontal: .75rem) {
+	padding: $vertical $horizontal;
+}

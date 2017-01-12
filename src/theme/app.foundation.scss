@@ -1,6 +1,7 @@
 html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    overflow: auto;
 }
 body {
     margin: 0;
@@ -64,8 +65,14 @@ img {
 }
 svg {
     transform: none;
+    width: 100%;
+    height: auto;
 
     &:not(:root) {
         overflow: auto;
     }
+}
+
+@-ms-viewport {
+	width: device-width;
 }
