@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { SkylineComponent } from './skyline.component';
+import { PmBioComponent } from './pm-bio.component';
 
-describe('SkylineComponent', () => {
-  let component: SkylineComponent;
-  let fixture: ComponentFixture<SkylineComponent>;
+describe('PmBioComponent', () => {
+  let component: PmBioComponent;
+  let fixture: ComponentFixture<PmBioComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SkylineComponent ]
+      declarations: [ PmBioComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SkylineComponent);
+    fixture = TestBed.createComponent(PmBioComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

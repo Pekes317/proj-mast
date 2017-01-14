@@ -4,3 +4,8 @@ export interface PmNav {
 	icon: string;
 	match: {};
 }
+
+export interface PmSocial {
+	svgIcon: string;
+	tip: string;
+}

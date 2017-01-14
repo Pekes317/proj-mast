@@ -7,27 +7,29 @@ import { RouterModule, Routes } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { PmHomeComponent } from './pm-home/pm-home.component';
 import { PmLogoComponent } from './pm-logo/pm-logo.component';
-import { SkylineComponent } from './skyline/skyline.component';
+import { PmSkylineComponent } from './pm-skyline/pm-skyline.component';
 import { PmHeroComponent } from './pm-hero/pm-hero.component';
 import { PmSocialComponent } from './pm-social/pm-social.component';
+import { PmBioComponent } from './pm-bio/pm-bio.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent, data: { title: 'Project Mast' } },
-  { path: 'bio', component: HomeComponent, data: { title: 'Bio | Project Mast' } },
-  { path: 'experience', component: HomeComponent, data: { title: 'Experience | Project Mast' } },
-  { path: 'contact', component: HomeComponent, data: { title: 'Contact | Project Mast' } }
+  { path: '', component: PmHomeComponent, data: { title: 'Project Mast' } },
+  { path: 'bio', component: PmBioComponent, data: { title: 'Bio | Project Mast' } },
+  { path: 'experience', component: PmHomeComponent, data: { title: 'Experience | Project Mast' } },
+  { path: 'projects', component: PmHomeComponent, data: { title: 'Projects | Project Mast' } }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    PmHomeComponent,
     PmLogoComponent,
-    SkylineComponent,
+    PmSkylineComponent,
     PmHeroComponent,
-    PmSocialComponent
+    PmSocialComponent,
+    PmBioComponent
   ],
   imports: [
     BrowserModule,

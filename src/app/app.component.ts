@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
     { name: 'Home', path: '', icon: 'home', match: { exact: true } },
     { name: 'Bio', path: 'bio', icon: 'person', match: { exact:  false } },
     { name: 'Experience', path: 'experience', icon: 'school', match: { exact:  false } },
-    { name: 'Contact', path: 'contact', icon: 'email', match: { exact: false } }
+    { name: 'Projects', path: 'projects', icon: 'work', match: { exact: false } }
   ];
 
   constructor(private active: ActivatedRoute,
