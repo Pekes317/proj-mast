@@ -14,7 +14,6 @@ import { PmSkylineComponent } from './pm-skyline/pm-skyline.component';
 import { PmHeroComponent } from './pm-hero/pm-hero.component';
 import { PmSocialComponent } from './pm-social/pm-social.component';
 import { PmBioComponent } from './pm-bio/pm-bio.component';
-import { PmBuildingComponent } from './pm-building/pm-building.component';
 
 const appRoutes: Routes = [
   { path: '', component: PmHomeComponent, data: { title: 'Project Mast' } },
@@ -31,8 +30,7 @@ const appRoutes: Routes = [
     PmSkylineComponent,
     PmHeroComponent,
     PmSocialComponent,
-    PmBioComponent,
-    PmBuildingComponent
+    PmBioComponent
   ],
   imports: [
     BrowserModule,

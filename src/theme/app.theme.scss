@@ -23,12 +23,13 @@ $pm-theme: md-light-theme($pm-primary, $pm-accent, $pm-warn);
 // that you are using.
 @include angular-material-theme($pm-theme);
 
-.pm-dark {
-	$pm-primary: md-palette($md-green, A700);
-  $pm-accent:  md-palette($md-blue-grey, 400, 700, 200);
-  $pm-warn:    md-palette($md-deep-orange);
 
-  $dark-theme: md-dark-theme($pm-primary, $pm-accent, $pm-warn);
+$dk-pm-primary: md-palette($md-green, A700);
+$dk-pm-accent:  md-palette($md-blue-grey, 400, 700, 200);
+$dk-pm-warn:    md-palette($md-deep-orange);
+
+.pm-dark {
+  $dark-theme: md-dark-theme($dk-pm-primary, $dk-pm-accent, $dk-pm-warn);
 
   @include angular-material-theme($dark-theme);
 }
