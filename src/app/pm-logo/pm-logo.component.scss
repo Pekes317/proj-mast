@@ -1,6 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Averia+Serif+Libre');
+
 .logo-link {
-	max-width: 6rem;
 	cursor: pointer;
-	height: auto;
-	max-height: 3.25rem;
+	width: 100%;
+	
+	svg {
+		max-width: 6rem;
+	  height: auto;
+	  max-height: 3.25rem;
+	}
+
+	.title {
+		font-family: 'Averia Serif Libre', cursive;
+		font-size: 2rem;
+	}
 }

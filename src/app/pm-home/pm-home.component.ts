@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pm-home.component.scss']
 })
 export class PmHomeComponent implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit() {

@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { InlineSVGModule } from 'ng-inline-svg';
 
 import { AppComponent } from './app.component';
 import { PmHomeComponent } from './pm-home/pm-home.component';
@@ -13,6 +14,7 @@ import { PmSkylineComponent } from './pm-skyline/pm-skyline.component';
 import { PmHeroComponent } from './pm-hero/pm-hero.component';
 import { PmSocialComponent } from './pm-social/pm-social.component';
 import { PmBioComponent } from './pm-bio/pm-bio.component';
+import { PmBuildingComponent } from './pm-building/pm-building.component';
 
 const appRoutes: Routes = [
   { path: '', component: PmHomeComponent, data: { title: 'Project Mast' } },
@@ -29,13 +31,15 @@ const appRoutes: Routes = [
     PmSkylineComponent,
     PmHeroComponent,
     PmSocialComponent,
-    PmBioComponent
+    PmBioComponent,
+    PmBuildingComponent
   ],
   imports: [
     BrowserModule,
     FlexLayoutModule,
     FormsModule,
     HttpModule,
+    InlineSVGModule,
     MaterialModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],

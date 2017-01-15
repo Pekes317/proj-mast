@@ -7,6 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./pm-logo.component.scss']
 })
 export class PmLogoComponent implements OnInit {
+  title: Object = {
+    first: 'Project',
+    last: 'Mast'
+  }
 
   constructor(private router: Router) { }
 
