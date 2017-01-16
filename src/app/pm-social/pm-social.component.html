@@ -1,5 +1,5 @@
 <div class="social-btns" fxLayout="column" fxLayoutAlign="start start">
-  <button md-icon-button color="accent" mdTooltip="email" mdTooltipPosition="left">
+  <button md-icon-button color="accent" mdTooltip="email" mdTooltipPosition="left" (click)="contactMe()">
     <md-icon>email</md-icon>
   </button>
   <a *ngFor="let btn of socialBtns" md-icon-button color="accent" [mdTooltip]="btn.tip" mdTooltipPosition="left">

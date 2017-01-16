@@ -1,9 +1,10 @@
 @import '../../theme/app.theme';
+
 .building {
   position: relative;
   max-width: 60vw;
-  
-	&::before {
+
+  &::before {
     content: url('../../assets/bio-building.svg');
     bottom: -1.5vw;
     left: -2.5vw;
@@ -12,12 +13,13 @@
     width: 100%;
     z-index: 0;
   }
-  
-	.profile-pic {
-    border: .35rem solid md-color($pm-accent);
+
+  .profile-pic {
+    border: .35rem solid rgba(md-color($pm-accent),.8);
+    margin-bottom: 2vw;
     max-width: 10vw;
     min-width: 4.5rem;
-    position: inherit;
+    position: relative;
     z-index: 1;
   }
 }

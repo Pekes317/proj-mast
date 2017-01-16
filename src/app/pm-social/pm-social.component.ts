@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { MdIconRegistry } from '@angular/material';
+import { MdDialog, MdIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 
 import { PmSocial } from '../pm-interface';
+import { PmContactComponent } from '../pm-contact/pm-contact.component';
 
 @Component({
-  selector: 'app-pm-social',
+  selector: 'app-pm-social', 
   templateUrl: './pm-social.component.html',
   styleUrls: ['./pm-social.component.scss']
 })
@@ -17,7 +18,7 @@ export class PmSocialComponent implements OnInit {
     { svgIcon: 'xda', tip: 'XDA Profile' }
   ];
 
-  constructor(private sanitize: DomSanitizer, private mdReg: MdIconRegistry) {
+  constructor(private dialog: MdDialog, private mdReg: MdIconRegistry, private sanitize: DomSanitizer) {
     mdReg.addSvgIconSetInNamespace('social', sanitize.bypassSecurityTrustResourceUrl('../../assets/icons/icons-social.svg'));
   }
 
@@ -25,4 +26,7 @@ export class PmSocialComponent implements OnInit {
     
   }
 
+  contactMe() {
+    let contactForm = this.dialog.open(PmContactComponent);
+  }
 }

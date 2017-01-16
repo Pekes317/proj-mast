@@ -1,0 +1,17 @@
+@import '../../theme/app.theme';
+
+.contact-form {
+	min-width: 35vw;
+
+	.input-fields {
+		width: 100%;
+	}
+
+	a {
+		color: md-color($pm-primary);
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

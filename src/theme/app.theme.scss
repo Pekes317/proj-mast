@@ -18,17 +18,17 @@ $pm-warn:    md-palette($md-deep-purple, 900);
 // Create the theme object (a Sass map containing all of the palettes).
 $pm-theme: md-light-theme($pm-primary, $pm-accent, $pm-warn);
 
+$dark-mode: dk-mode(false);
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($pm-theme);
 
-
-$dk-pm-primary: md-palette($md-green, A700);
-$dk-pm-accent:  md-palette($md-blue-grey, 400, 700, 200);
-$dk-pm-warn:    md-palette($md-deep-orange);
-
 .pm-dark {
+  $dk-pm-primary: md-palette($md-green, A700) !global;
+  $dk-pm-accent:  md-palette($md-blue-grey, 400, 700, 200) !global;
+  $dk-pm-warn:    md-palette($md-deep-orange) !global;
+
   $dark-theme: md-dark-theme($dk-pm-primary, $dk-pm-accent, $dk-pm-warn);
 
   @include angular-material-theme($dark-theme);
