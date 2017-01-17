@@ -4,6 +4,7 @@
 nav {
   @include pm-padding;
   position: relative;
+  z-index: 999;
   @include nav-btns;
   .mobile-menu-btn {
     position: absolute;
