@@ -17,8 +17,8 @@ export class AppComponent implements OnInit {
   darkTheme: boolean = false;
   navItems: Array<PmNav> = [
     { name: 'Home', path: '', icon: 'home', match: { exact: true } },
-    { name: 'Bio', path: 'bio', icon: 'person', match: { exact:  false } },
-    { name: 'Experience', path: 'experience', icon: 'school', match: { exact:  false } },
+    { name: 'Bio', path: 'bio', icon: 'person', match: { exact: false } },
+    { name: 'Experience', path: 'experience', icon: 'school', match: { exact: false } },
     { name: 'Projects', path: 'projects', icon: 'work', match: { exact: false } }
   ];
 

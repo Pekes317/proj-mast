@@ -19,8 +19,7 @@ import { PmSocialComponent } from './pm-social/pm-social.component';
 
 const appRoutes: Routes = [
   { path: '', component: PmHomeComponent, data: { title: 'Project Mast' } },
-  { path: 'bio', component: PmBioComponent, data: { title: 'Bio | Project Mast' } },
-  { path: 'projects', component: PmHomeComponent, data: { title: 'Projects | Project Mast' } }
+  { path: 'bio', component: PmBioComponent, data: { title: 'Bio | Project Mast' } }
 ];
 
 @NgModule({
