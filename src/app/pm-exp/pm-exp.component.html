@@ -1,8 +1,15 @@
-<div fxLayout.xs="column" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="1.5%">
-  <aside fxLayout="column" fxLayout.xs="row" fxLayoutAlign="start start">
-    <a md-button [routerLink]="['/experience']">Skills</a>
-    <a md-button [routerLink]="['/experience/testimonial']">Testimonials</a>
-  </aside>
-  <router-outlet></router-outlet>
+<div class="exp-view">
+  <section [@slideUp]="slide">
+    <app-pm-skills></app-pm-skills>
+    <button md-icon-button (click)="toggleSection()">
+      <md-icon>expand_more</md-icon>
+    </button>
+  </section>
+  <section [@slideDown]="slide">
+    <app-pm-testimonial></app-pm-testimonial>
+    <button md-icon-button (click)="toggleSection()">
+      <md-icon>expand_more</md-icon>
+    </button>
+  </section>
 </div>
 <app-pm-dark-knight class="dk-knight"></app-pm-dark-knight>
