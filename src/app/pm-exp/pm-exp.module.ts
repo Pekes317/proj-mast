@@ -11,10 +11,6 @@ import { PmTestimonialComponent } from './pm-testimonial/pm-testimonial.componen
 
 const expRoutes: Routes = [
   { path: 'experience', component: PmExpComponent, data: { title: 'Experience | Project Mast' } }
-    /* children: [
-       { path: '', component: PmSkillsComponent, data: { title: 'Experience | Project Mast' } },
-       { path: 'testimonial', component: PmTestimonialComponent, data: { title: 'Testimonial | Project Mast' } }
-     ] }*/
 ]
 
 @NgModule({

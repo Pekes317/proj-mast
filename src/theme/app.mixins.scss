@@ -27,5 +27,15 @@
 }
 
 @mixin pm-padding($vertical: .75rem, $horizontal: .75rem) {
-	padding: $vertical $horizontal;
+  padding: $vertical $horizontal;
+}
+
+@mixin pm-slide-position($offset: 0, $first: true) {
+  $position: if($first, inherit, absolute);
+  height: 100%;
+  max-height: 100vh;
+  overflow-y: auto;
+  position: $position;
+  top: $offset;
+  z-index: 99;
 }

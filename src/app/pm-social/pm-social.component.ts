@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MdDialog, MdIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 
-import { PmSocial } from '../pm-interface';
+import { PmSocial } from '../shared/pm-interface';
 import { PmContactComponent } from '../pm-contact/pm-contact.component';
 
 @Component({

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { PmDarkService } from '../shared/pm-dark.service';
+
 @Component({
   selector: 'app-pm-bio',
   templateUrl: './pm-bio.component.html',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PmBioComponent implements OnInit {
 
-  constructor() { }
+  constructor(private pmDark: PmDarkService) { }
 
   ngOnInit() {
   }
