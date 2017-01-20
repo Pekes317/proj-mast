@@ -1,4 +1,4 @@
-<div [class.pm-dark]="pmDark.darkTheme">
+<div [class.pm-dark]="darkTheme">
   <md-sidenav-container fullscreen>
    <nav fxLayout="row" fxLayoutAlign="start start" fxLayoutAlign.xs="center">
       <app-pm-logo fxFlex="33vw" fxFlex.xs=""></app-pm-logo>
@@ -22,7 +22,7 @@
       </md-nav-list>
     </md-sidenav>
      <div class="dark-toggle" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start start">
-      <md-slide-toggle [(ngModel)]="pmDark.darkTheme">Dark Mode</md-slide-toggle>
+      <md-slide-toggle [(ngModel)]="darkTheme">Dark Mode</md-slide-toggle>
       <app-pm-social></app-pm-social>
     </div>
     <main class="my-content">

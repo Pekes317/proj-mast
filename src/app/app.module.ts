@@ -9,7 +9,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
 import { PmBioComponent } from './pm-bio/pm-bio.component';
 import { PmContactComponent } from './pm-contact/pm-contact.component';
-import { PmDarkService } from './shared/pm-dark.service';
 import { PmExpModule } from './pm-exp/pm-exp.module';
 import { PmHeroComponent } from './pm-hero/pm-hero.component';
 import { PmHomeComponent } from './pm-home/pm-home.component';
@@ -47,7 +46,7 @@ const appRoutes: Routes = [
   entryComponents: [
     PmContactComponent
   ],
-  providers: [PmDarkService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

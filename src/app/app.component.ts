@@ -4,7 +4,6 @@ import { Title } from '@angular/platform-browser';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/mergeMap';
 
-import { PmDarkService } from './shared/pm-dark.service';
 import { PmNav } from './shared/pm-interface';
 
 @Component({
@@ -15,6 +14,7 @@ import { PmNav } from './shared/pm-interface';
 export class AppComponent implements OnInit {
   @ViewChildren('btns') btns: QueryList<MdListItem>;
 
+  darkTheme: boolean = false;
   navItems: Array<PmNav> = [
     { name: 'Home', path: '', icon: 'home', match: { exact: true } },
     { name: 'Bio', path: 'bio', icon: 'person', match: { exact: false } },
@@ -23,7 +23,6 @@ export class AppComponent implements OnInit {
   ];
 
   constructor(private active: ActivatedRoute,
-    private pmDark: PmDarkService,
     private router: Router,
     private title: Title) { }
 
