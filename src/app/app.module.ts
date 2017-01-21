@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
+import { PmBioBuildingComponent } from './pm-bio-building/pm-bio-building.component';
 import { PmBioComponent } from './pm-bio/pm-bio.component';
 import { PmContactComponent } from './pm-contact/pm-contact.component';
 import { PmExpModule } from './pm-exp/pm-exp.module';
@@ -31,7 +32,8 @@ const appRoutes: Routes = [
     PmHomeComponent,
     PmLogoComponent,
     PmSkylineComponent,  
-    PmSocialComponent
+    PmSocialComponent,
+    PmBioBuildingComponent
   ],
   imports: [
     BrowserModule,
