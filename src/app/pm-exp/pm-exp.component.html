@@ -1,17 +1,2 @@
-<div class="exp-wrapper">
-  <div class="exp-view">
-    <section class="skill" [@slideUpDown]="slide">
-      <app-pm-skills></app-pm-skills>
-      <button md-icon-button (click)="toggleSection()">
-      <md-icon>expand_more</md-icon>
-    </button>
-    </section>
-    <section class="test" [@slideUpDown]="slide">
-      <app-pm-testimonial></app-pm-testimonial>
-      <button md-icon-button (click)="toggleSection()">
-      <md-icon>expand_more</md-icon>
-    </button>
-    </section>
-  </div>
-</div>
 <app-pm-dark-knight class="dk-knight"></app-pm-dark-knight>
+<router-outlet></router-outlet>

@@ -5,9 +5,16 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { PmProjectComponent } from './pm-project.component';
 import { PmRoofComponent } from './pm-roof/pm-roof.component';
+import { PmCodeComponent } from './pm-code/pm-code.component';
+import { PmGraphicsComponent } from './pm-graphics/pm-graphics.component';
 
 const projectRoutes: Routes = [
-  { path: 'projects', component: PmProjectComponent, data: { title: 'Projects | Project Mast' } }
+  { path: 'projects', component: PmProjectComponent,
+    children: [ 
+      { path: '', component: PmGraphicsComponent, data: { title: 'Projects | Project Mast' } },
+      { path: 'code', component: PmCodeComponent, data: { title: 'Code | Project Mast' } }
+    ]
+  }
 ]
 
 @NgModule({
@@ -18,7 +25,9 @@ const projectRoutes: Routes = [
   ],
   declarations: [
     PmProjectComponent,
-    PmRoofComponent
+    PmRoofComponent,
+    PmCodeComponent,
+    PmGraphicsComponent
   ]
 })
 export class PmProjectModule { }

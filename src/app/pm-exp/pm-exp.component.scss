@@ -1,22 +1,3 @@
-@import '../../theme/app.mixins';
-
-.exp-wrapper {
-  height: 77.5vh;
-  overflow-y: hidden;
-
-  .exp-view {
-    position: relative;
-    
-    .test {
-      @include pm-slide-position(100vh, false);
-    }
-
-    .skill {
-      @include pm-slide-position;
-    }
-  }
-}
-
 .dk-knight {
   bottom: 0;
   position: fixed;

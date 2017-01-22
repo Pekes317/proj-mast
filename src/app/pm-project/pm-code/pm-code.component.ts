@@ -3,13 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import { pmSlideNav } from '../../shared/pm-animation';
 
 @Component({
-  selector: 'app-pm-skills',
-  templateUrl: './pm-skills.component.html',
-  styleUrls: ['./pm-skills.component.scss'],
+  selector: 'app-pm-code',
+  templateUrl: './pm-code.component.html',
+  styleUrls: ['./pm-code.component.scss'],
   animations: [pmSlideNav],
   host: { '[@slideNav]': '' }
 })
-export class PmSkillsComponent implements OnInit {
+export class PmCodeComponent implements OnInit {
 
   constructor() { }
 

@@ -2,7 +2,7 @@
 
 .bio {
   position: relative;
- 
+  
   .bld {
     bottom: -.5vw;
     left: -1.66vw;
@@ -11,7 +11,7 @@
     width: 100%;
     z-index: 0;
   }
- 
+  
   .profile-pic {
     border: .35rem solid rgba(md-color($pm-accent), .8);
     margin-bottom: 2vw;
@@ -19,7 +19,7 @@
     min-width: 4.5rem;
     position: relative;
     z-index: 1;
-     
+    
      :host-context(.pm-dark) .profile-pic {
       border: .35rem solid rgba(md-color($dk-pm-accent), .8);
     }
