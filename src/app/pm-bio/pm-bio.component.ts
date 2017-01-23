@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-pm-bio',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pm-bio.component.scss']
 })
 export class PmBioComponent implements OnInit {
+  bld: SafeResourceUrl;
 
-  constructor() { }
+  constructor(private santize: DomSanitizer) { }
 
   ngOnInit() {
+    this.bld = this.santize.bypassSecurityTrustResourceUrl('../../assets/svg/bio-building.svg')
   }
 
 }

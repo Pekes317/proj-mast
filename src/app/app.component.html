@@ -1,13 +1,13 @@
 <div [class.pm-dark]="darkTheme">
   <md-sidenav-container fullscreen>
-   <nav fxLayout="row" fxLayoutAlign="start start" fxLayoutAlign.xs="center">
+   <nav fxLayout="row" fxLayoutAlign="space-between start" fxLayoutAlign.xs="center">
       <app-pm-logo fxFlex="33vw" fxFlex.xs=""></app-pm-logo>
-      <div class="ie-fix-nav" fxHide="false" fxHide.xs fxFlex="33vw">
+      <div class="ie-fix-nav" fxHide="false" fxHide.xs fxFlex="30vw">
         <a *ngFor="let item of navItems" [name]="item.name" class="nav-btns" [routerLink]="item.path" md-button routerLinkActive="active" [routerLinkActiveOptions]="item.match">
           <md-icon>{{item.icon}}</md-icon>
         </a>
       </div>
-      <div fxHide="false" fxHide.xs fxFlex="33vw">&nbsp;</div>
+      <div fxHide="false" fxHide.xs fxFlex="25vw">&nbsp;</div>
       <div class="mobile-menu-btn" fxFlexAlign="center" fxShow="false" fxShow.xs>
         <button md-icon-button (click)="mobile.toggle()">
         <md-icon>menu</md-icon>

@@ -29,3 +29,11 @@
 @mixin pm-padding($vertical: .75rem, $horizontal: .75rem) {
   padding: $vertical $horizontal;
 }
+
+@mixin pm-bg-card {
+  background-color: transparentize(#fefefe, .3);
+
+	:host-context(.pm-dark) & { 
+			background-color: transparentize(#424242, .3);
+	}
+}

@@ -1,3 +1,31 @@
 @import '../../../theme/app.mixins';
 
+.side-nav {
+	@include pm-padding(.75rem, 0);
+}
 
+.feed {
+	width: 80%;
+	@include pm-bg-card;
+
+	.front {
+		display: flex;
+		justify-content: flex-start;
+		
+		md-icon {
+			transform: rotate(180deg);
+		}
+	}
+
+	.middle {
+		display: flex;
+		justify-content: center;
+		line-height: 150%;
+		@include pm-padding;
+	}
+
+	.back {
+		display: flex;
+		justify-content: flex-end;
+	}
+}

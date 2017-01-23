@@ -8,12 +8,14 @@ import { PmExpComponent } from './pm-exp.component';
 import { PmDarkKnightComponent } from './pm-dark-knight/pm-dark-knight.component';
 import { PmSkillsComponent } from './pm-skills/pm-skills.component';
 import { PmTestimonialComponent } from './pm-testimonial/pm-testimonial.component';
+import { PmJobsComponent } from './pm-jobs/pm-jobs.component';
 
 const expRoutes: Routes = [
   {
     path: 'experience', component: PmExpComponent,
     children: [
-      { path: '', component: PmSkillsComponent, data: { title: 'Experience | Project Mast' } },
+      { path: '', component: PmJobsComponent, data: { title: 'Experience | Project Mast' } },
+      { path: 'skills', component: PmSkillsComponent, data: { title: 'Skils | Project Mast' } },
       { path: 'testimonial', component: PmTestimonialComponent, data: { title: 'Testimonial | Project Mast' } }
     ]
   }
@@ -30,7 +32,8 @@ const expRoutes: Routes = [
     PmExpComponent,
     PmDarkKnightComponent,
     PmSkillsComponent,
-    PmTestimonialComponent
+    PmTestimonialComponent,
+    PmJobsComponent
   ]
 })
 export class PmExpModule { }

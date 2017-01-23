@@ -20,7 +20,7 @@
     position: relative;
     z-index: 1;
     
-     :host-context(.pm-dark) .profile-pic {
+     :host-context(.pm-dark) & {
       border: .35rem solid rgba(md-color($dk-pm-accent), .8);
     }
   }

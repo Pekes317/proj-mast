@@ -1,8 +1,18 @@
-<div fxLayout="row" fxLayout.xs="column" fxLayoutGap="1vw">
-  <div>
-    <a md-button routerLink="/experience">Skills</a>
+<div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center start" fxLayoutGap="1vw">
+  <div class="side-nav" fxLayout.xs="row" fxLayout="column">
+    <a md-button routerLink="/experience">Experience</a>
+    <a md-button routerLink="/experience/skills">Skills</a>
   </div>
-  <div>
-    pm-testimonial works!
-  </div>
+  <md-card class="feed">
+    <md-card-title>Feedback</md-card-title>
+    <md-card-content>
+      <div class="front">
+        <md-icon>format_quote</md-icon>
+      </div>
+      <div class="middle" fxFlexAlign="center" [innerHtml]="message?.message"></div>
+      <div class="back">
+        <md-icon>format_quote</md-icon>
+      </div>
+    </md-card-content>
+  </md-card>
 </div>
