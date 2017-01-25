@@ -1,10 +1,45 @@
-@import '../../../theme/app.mixins';
+@import '../../../theme/app.mixins',
+ '../../../theme/app.theme';
 
 .side-nav {
-	@include pm-padding(.75rem, 0);
+  @include pm-padding(.75rem, 0);
 }
 
 .jobs {
-	width: 80%;
-	@include pm-bg-card;
+  width: 80%;
+  @include pm-bg-card;
+  
+	.pm-achieve {
+		display: flex;
+		justify-content: center;
+		@include pm-padding;
+    
+		md-list {
+      margin-bottom: 1rem;
+     
+		  md-list-item {
+				display: flex;
+				justify-content: flex-start;
+
+        &::before {
+					align-self: center;
+          content: '\2022';
+					font-size: 1.5rem;					
+        }
+      }
+    }
+  }
+  
+	.pm-resume {
+		align-content: center;
+    display: flex;
+		flex-direction: row;
+    justify-content: center;
+		width: 100%;
+		@include pm-padding(1.5rem);
+  
+	  a {
+      border: currentColor 1px solid;
+    }
+  }
 }

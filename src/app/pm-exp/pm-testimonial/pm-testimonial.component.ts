@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { pmSlideNav } from '../../shared/pm-animation';
+import { pmFadeInOut, pmSlideNav } from '../../shared/pm-animation';
 import { PmFeedback } from '../../shared/pm-interface';
 
 @Component({
   selector: 'app-pm-testimonial',
   templateUrl: './pm-testimonial.component.html',
   styleUrls: ['./pm-testimonial.component.scss'],
-  animations: [pmSlideNav],
+  animations: [pmFadeInOut, pmSlideNav],
   host: { '[@slideNav]': '' }
 })
 export class PmTestimonialComponent implements OnInit {

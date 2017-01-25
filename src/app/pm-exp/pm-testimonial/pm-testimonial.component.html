@@ -9,7 +9,7 @@
       <div class="front">
         <md-icon>format_quote</md-icon>
       </div>
-      <div class="middle" fxFlexAlign="center" [innerHtml]="message?.message"></div>
+      <div class="middle" fxFlexAlign="center" [@fadeInOut]="message?.id" [innerHtml]="message?.message"></div>
       <div class="back">
         <md-icon>format_quote</md-icon>
       </div>
