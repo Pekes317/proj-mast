@@ -37,3 +37,11 @@
 			background-color: transparentize(#424242, .3);
 	}
 }
+
+@mixin pm-text {
+  color: #000;
+
+  :host-context(.pm-dark) & {
+    color: #fff;
+  }
+}

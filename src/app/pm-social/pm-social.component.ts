@@ -27,6 +27,8 @@ export class PmSocialComponent implements OnInit {
   }
 
   contactMe() {
-    let contactForm = this.dialog.open(PmContactComponent);
+    let contactForm = this.dialog.open(PmContactComponent, {
+      role: 'dialog'
+    });
   }
 }

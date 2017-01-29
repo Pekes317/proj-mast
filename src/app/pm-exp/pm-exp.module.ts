@@ -9,6 +9,7 @@ import { PmDarkKnightComponent } from './pm-dark-knight/pm-dark-knight.component
 import { PmSkillsComponent } from './pm-skills/pm-skills.component';
 import { PmTestimonialComponent } from './pm-testimonial/pm-testimonial.component';
 import { PmJobsComponent } from './pm-jobs/pm-jobs.component';
+import { PmSkillComponent } from './pm-skill/pm-skill.component';
 
 const expRoutes: Routes = [
   {
@@ -33,7 +34,9 @@ const expRoutes: Routes = [
     PmDarkKnightComponent,
     PmSkillsComponent,
     PmTestimonialComponent,
-    PmJobsComponent
-  ]
+    PmJobsComponent,
+    PmSkillComponent
+  ],
+  entryComponents: [PmSkillComponent]
 })
 export class PmExpModule { }

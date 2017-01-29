@@ -1,12 +1,28 @@
 <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center start" fxLayoutGap="1vw">
-  <div class="sub-nav" fxLayout.xs="row" fxLayout="column">
+  <div class="side-nav" fxLayout.xs="row" fxLayout="column">
     <a md-button routerLink="/experience">Experience</a>
     <a md-button routerLink="/experience/testimonial">Feedback</a>
   </div>
   <md-card class="skills">
     <md-card-title>Skills</md-card-title>
     <md-card-content>
-      pm-skills works!
+      <div class="list" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-around start">
+        <md-nav-list>
+          <h3 md-subheader>Languages</h3>
+          <md-divider></md-divider>
+          <md-list-item *ngFor="let code of coding" (click)="skillDets(code)">{{ code.name }}</md-list-item>
+        </md-nav-list>
+        <md-nav-list>
+          <h3 md-subheader>Frameworks</h3>
+          <md-divider></md-divider>
+           <md-list-item *ngFor="let work of frameworks" (click)="skillDets(work)">{{ work.name }}</md-list-item>
+        </md-nav-list>
+        <md-nav-list>
+          <h3 md-subheader>Software/Tools</h3>
+          <md-divider></md-divider>
+           <md-list-item *ngFor="let app of apps" (click)="skillDets(app)">{{ app.name }}</md-list-item>
+        </md-nav-list>
+      </div>
     </md-card-content>
   </md-card>
 </div>

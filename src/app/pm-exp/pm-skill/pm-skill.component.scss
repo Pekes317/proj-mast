@@ -1,0 +1,42 @@
+.skill-bar {
+	align-content: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 15vw;
+	min-width: 30vw;
+
+	.labels {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding-bottom: .5rem;
+
+		.begin {
+			position: relative;
+		
+			&:before {
+				content: '|';
+				font-weight: 600;
+				position: absolute;
+				top: .8rem;
+			}
+		}
+
+		.ex {
+			position: relative;
+		
+			&:after {
+				content: '|';
+				font-weight: 600;
+				position: absolute;
+				right: 0;
+				top: .8rem;
+			}
+		}
+	}
+
+	md-progress-bar {
+		height: .75rem;
+	}
+}

@@ -1,0 +1,11 @@
+<h2 md-dialog-title>{{ skill.name }}</h2>
+<div class="skill-bar">
+  <div class="labels">
+    <span class="begin">Beginner</span>
+    <span class="ex">Expert</span>
+  </div>
+  <md-progress-bar [value]="level"></md-progress-bar>
+</div>
+<md-dialog-actions>
+  <button md-dialog-close md-button color="warn">Close</button>
+</md-dialog-actions>

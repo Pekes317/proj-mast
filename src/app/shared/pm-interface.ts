@@ -11,6 +11,16 @@ export interface PmSocial {
 }
 
 export interface PmFeedback {
-	id: Number;
+	id: number;
 	message: string;
+}
+
+export interface PmSkills {
+	category: string;
+	list: Array<PmSkill>;
+}
+
+export interface PmSkill {
+	name: string;
+	level: number;
 }

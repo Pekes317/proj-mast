@@ -1,0 +1,133 @@
+[
+	{
+    "category": "languages",
+    "list": [
+			{
+      "name": "CSS/CSS3",
+      "level": 80
+			},
+			{
+				"name": "SCSS",
+				"level": 45
+			},
+			{
+				"name": "HTML/HTML5",
+				"level": 85
+			},
+			{
+				"name": "Javascript/ECMAscript",
+				"level": 55
+			},
+			{
+				"name": "Typescript",
+				"level": 50
+			},
+			{
+				"name": "Actionscript",
+				"level": 50
+			},
+			{
+				"name": "XML",
+				"level": 40
+			},
+			{
+				"name": "PHP",
+				"level": 25
+			},
+			{
+				"name": "VB.Net",
+				"level": 25
+			},
+			{
+				"name": "Java",
+				"level": 10
+			}
+		]
+  },
+	{
+		"category": "frameworks",
+		"list": [
+			{
+				"name": "Ionic",
+				"level": 60
+			},
+			{
+				"name": "Angular",
+				"level": 50
+			},
+			{
+				"name": "Angular Material",
+				"level": 60
+			},
+			{
+				"name": "JQuery",
+				"level": 40
+			},
+			{
+				"name": "Node.js",
+				"level": 20
+			},
+			{
+				"name": "Bootstrap",
+				"level": 40
+			}
+		]
+	},
+	{
+		"category": "software",
+		"list": [
+			{
+				"name": "Adobe CS/CC",
+				"level": 75
+			},
+			{
+				"name": "Photoshop",
+				"level": 90
+			},
+			{
+				"name": "Illustrator",
+				"level": 70
+			},
+			{
+				"name": "Adobe Acrobat",
+				"level": 80
+			},
+			{
+				"name": "Dreamweaver",
+				"level": 90
+			},
+			{
+				"name": "Adobe Premiere",
+				"level": 60
+			},
+			{
+				"name": "After Effects",
+				"level": 65
+			},
+			{
+				"name": "InDesign",
+				"level": 40
+			},
+			{
+				"name": "Flash/Animate CC",
+				"level": 20
+			},
+			{
+				"name": "Git/Github",
+				"level": 30
+			},
+			{
+				"name": "VS Code",
+				"level": 20
+			},
+			{
+				"name": "Visual Studio",
+				"level": 25
+			},
+			{
+				"name": "Command Line Interface",
+				"level": 80
+			}
+		]
+	}
+]
