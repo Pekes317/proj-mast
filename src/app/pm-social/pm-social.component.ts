@@ -12,10 +12,10 @@ import { PmContactComponent } from '../pm-contact/pm-contact.component';
 })
 export class PmSocialComponent implements OnInit {
   socialBtns: Array<PmSocial> = [
-    { svgIcon: 'linkedin', tip: 'LinkedIn' },
-    { svgIcon: 'github', tip: 'Github' },
-    { svgIcon: 'ionic', tip: 'Ionic Forums' },
-    { svgIcon: 'xda', tip: 'XDA Profile' }
+    { svgIcon: 'linkedin', tip: 'LinkedIn', link: 'https://www.linkedin.com/in/prmast' },
+    { svgIcon: 'github', tip: 'Github', link: 'https://github.com/Pekes317' },
+    { svgIcon: 'ionic', tip: 'Ionic Forums', link: 'https://forum.ionicframework.com/users/El_Dee565/summary' },
+    { svgIcon: 'xda', tip: 'XDA Profile', link: 'https://forum.xda-developers.com/member.php?u=4905136' }
   ];
 
   constructor(private dialog: MdDialog, private mdReg: MdIconRegistry, private sanitize: DomSanitizer) {

@@ -8,6 +8,7 @@ export interface PmNav {
 export interface PmSocial {
 	svgIcon: string;
 	tip: string;
+	link: string;
 }
 
 export interface PmFeedback {

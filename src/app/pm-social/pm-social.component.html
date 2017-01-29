@@ -2,7 +2,7 @@
   <button md-icon-button color="accent" mdTooltip="email" mdTooltipPosition="left" (click)="contactMe()">
     <md-icon>email</md-icon>
   </button>
-  <a *ngFor="let btn of socialBtns" md-icon-button color="accent" [mdTooltip]="btn.tip" mdTooltipPosition="left">
+  <a *ngFor="let btn of socialBtns" md-icon-button color="accent" [mdTooltip]="btn.tip" target="_blank" mdTooltipPosition="left" [href]="btn.link">
     <md-icon [svgIcon]="'social:'+btn.svgIcon"></md-icon>
   </a>
 </div>
