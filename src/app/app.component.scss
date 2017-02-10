@@ -6,6 +6,7 @@ nav {
   position: relative;
   z-index: 9999;
   @include nav-btns;
+  
   .mobile-menu-btn {
     position: absolute;
     right: .75rem;
