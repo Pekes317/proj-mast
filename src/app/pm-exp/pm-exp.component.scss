@@ -1,3 +1,9 @@
+@import '../../theme/app.mixins';
+
+.side-nav {
+	@include pm-padding(.75rem, 0);
+}
+
 .dk-knight {
   bottom: 0;
   position: fixed;

@@ -1,19 +1,13 @@
-<div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center start" fxLayoutGap="1vw">
-  <div class="sub-nav" fxLayout.xs="row" fxLayout="column">
-    <a md-button routerLink="/experience/skills">Skills</a>
-    <a md-button routerLink="/experience/testimonial">Feedback</a>
-  </div>
-  <md-card class="jobs">
-    <md-card-title>Experience</md-card-title>
-    <md-card-content class="pm-achieve">
-      <md-list [@fadeInOut]="fadeIn">
-        <md-list-item *ngFor="let achieve of achieves">{{ achieve }}</md-list-item>
-      </md-list>
-    </md-card-content>
-    <md-card-footer class="pm-resume">
-      <a md-button color="primary" download target="_blank" href="assets/resume.pdf">Resum&#233;
+<md-card class="jobs">
+  <md-card-title>Experience</md-card-title>
+  <md-card-content class="pm-achieve">
+    <md-list [@fadeInOut]="fadeIn">
+      <md-list-item *ngFor="let achieve of achieves"><span class="achieve-text">{{ achieve }}</span></md-list-item>
+    </md-list>
+  </md-card-content>
+  <md-card-footer class="pm-resume">
+    <a md-button color="primary" download target="_blank" href="assets/resume.pdf">Resum&#233;
           <md-icon>file_download</md-icon>
         </a>
-    </md-card-footer>
-  </md-card>
-</div>
+  </md-card-footer>
+</md-card>

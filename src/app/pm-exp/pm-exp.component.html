@@ -1,2 +1,12 @@
 <app-pm-dark-knight class="dk-knight"></app-pm-dark-knight>
-<router-outlet></router-outlet>
+
+<div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start start" fxLayoutGap="1vw">
+  <div class="side-nav" fxLayout.xs="row" fxLayout="column">
+    <a md-button routerLink="/experience">Experience</a>
+    <a md-button routerLink="/experience/skills">Skills</a>
+    <a md-button routerLink="/experience/testimonial">Feedback</a>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

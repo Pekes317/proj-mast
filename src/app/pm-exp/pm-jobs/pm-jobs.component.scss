@@ -18,15 +18,17 @@
 		md-list {
       margin-bottom: 1rem;
      
-		  md-list-item {
+		  .achieve-text {
 				@include pm-text;
+				align-items: center;
 				display: flex;
 				justify-content: flex-start;
+				
 
         &::before {
-					align-self: center;
           content: '\2022';
-					font-size: 1.5rem;					
+					font-size: 1.5rem;
+					padding-right: .75rem;				
         }
       }
     }

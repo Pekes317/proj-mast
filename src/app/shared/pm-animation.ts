@@ -11,12 +11,12 @@ export const pmSlideNav = trigger('slideNav', [
 	state('void', style({ position: 'absolute', width: '90%' })),
 	state('*', style({ position: 'absolute', width: '90%' })),
 	transition(':enter', [
-		style({ transform: 'translateY(1000px)' }),
+		style({ transform: 'translateY(2000px)' }),
 		animate('1s ease-in-out', style({ transform: 'translateY(0)' }))
 	]),
 	transition(':leave', [
 		style({ transform: 'translateY(0)' }),
-		animate('1s ease-in-out', style({ transform: 'translateY(-1000px)' }))
+		animate('1s ease-in-out', style({ transform: 'translateY(-2000px)' }))
 	])
 ]);
 
