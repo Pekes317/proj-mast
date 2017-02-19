@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
+import { SwiperModule } from 'angular2-swiper-wrapper';
 
 import { PmProjectComponent } from './pm-project.component';
 import { PmRoofComponent } from './pm-roof/pm-roof.component';
@@ -25,7 +26,8 @@ const projectRoutes: Routes = [
     CommonModule,
     FlexLayoutModule,
     MaterialModule,
-    RouterModule.forChild(projectRoutes)
+    RouterModule.forChild(projectRoutes),
+    SwiperModule
   ],
   declarations: [
     PmProjectComponent,

@@ -1,3 +1,11 @@
 <md-card class="graphic">
-  graphics
+  <swiper [config]="configSlides">
+    <div class="slide" *ngFor="let slide of graphicSlides">
+      <figure>
+        <img [src]="slide.pic" [alt]="slide.title">
+        <figcaption>{{ slide.title }}</figcaption>
+      </figure>
+    </div>
+  </swiper>
+  <div class="swiper-pagination"></div>
 </md-card>

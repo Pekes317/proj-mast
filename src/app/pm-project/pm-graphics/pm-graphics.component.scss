@@ -1,6 +1,25 @@
-@import '../../../theme/app.mixins';
+@import '../../../theme/app.mixins',
+'../../../theme/app.theme';
 
 .graphic {
+  overflow: hidden;
+  position: relative;
   width: 80%;
   @include pm-bg-card;
+  
+  .slide {
+
+    figure {
+      max-width: 25vw;
+      text-align: center;
+      
+      :host-context(.pm-dark) & {
+        color: #fff;
+      }
+
+      figcaption {
+        padding-top: .5rem;
+      }
+    }
+  }
 }

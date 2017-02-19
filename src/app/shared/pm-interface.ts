@@ -25,3 +25,9 @@ export interface PmSkill {
 	name: string;
 	level: number;
 }
+
+export interface PmGraphic {
+	title: string;
+	pic: string;
+	desc: string;
+}
