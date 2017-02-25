@@ -7,7 +7,7 @@ import { SwiperModule } from 'angular2-swiper-wrapper';
 
 import { PmProjectComponent } from './pm-project.component';
 import { PmRoofComponent } from './pm-roof/pm-roof.component';
-import { PmCodeComponent } from './pm-code/pm-code.component';
+import { PmWebComponent } from './pm-web/pm-web.component';
 import { PmGraphicsComponent } from './pm-graphics/pm-graphics.component';
 import { PmBaseComponent } from './pm-base/pm-base.component';
 
@@ -16,7 +16,7 @@ const projectRoutes: Routes = [
     children: [ 
       { path: '', component: PmBaseComponent, data: { title: 'Projects | Project Mast' } },
       { path: 'graphic', component: PmGraphicsComponent, data: { title: 'Graphics | Project Mast' } },
-      { path: 'code', component: PmCodeComponent, data: { title: 'Code | Project Mast' } }
+      { path: 'code', component: PmWebComponent, data: { title: 'Code | Project Mast' } }
     ]
   }
 ]
@@ -32,7 +32,7 @@ const projectRoutes: Routes = [
   declarations: [
     PmProjectComponent,
     PmRoofComponent,
-    PmCodeComponent,
+    PmWebComponent,
     PmGraphicsComponent,
     PmBaseComponent
   ]

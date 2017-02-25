@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { SwiperConfigInterface } from 'angular2-swiper-wrapper';
 
 import { pmSlideNav } from '../../shared/pm-animation';
 import { PmGraphic } from '../../shared/pm-interface';
@@ -12,14 +13,14 @@ import { PmGraphic } from '../../shared/pm-interface';
   host: { '[@slideNav]': '' }
 })
 export class PmGraphicsComponent implements OnInit {
-  configSlides: SwiperOptions = {
+  configSlides: SwiperConfigInterface = {
     direction: 'horizontal',
     keyboardControl: true,
     nextButton: '.swiper-button-next',
     pagination: '.swiper-pagination',
     paginationClickable: true,
     prevButton: '.swiper-button-prev'
-  };
+   };
   graphicSlides: Array<PmGraphic> = require('./pm-graphic.json');
 
   constructor() { }

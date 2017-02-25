@@ -1,6 +1,6 @@
 @mixin nav-btns($top: 0) {
   .active {
-    color: md-color($pm-primary) !important;
+    color: mat-color($pm-primary) !important;
   }
   .ie-fix {
     flex: 0 0 auto;

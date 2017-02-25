@@ -13,7 +13,7 @@
   }
   
   .profile-pic {
-    border: .35rem solid rgba(md-color($pm-accent), .8);
+    border: .35rem solid rgba(mat-color($pm-accent), .8);
     margin-bottom: 2vw;
     max-width: 10vw;
     min-width: 4.5rem;
@@ -21,7 +21,7 @@
     z-index: 1;
     
      :host-context(.pm-dark) & {
-      border: .35rem solid rgba(md-color($dk-pm-accent), .8);
+      border: .35rem solid rgba(mat-color($dk-pm-accent), .8);
     }
   }
 }
