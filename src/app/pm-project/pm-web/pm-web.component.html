@@ -1,3 +1,14 @@
 <md-card class="code">
-    code 
+  <md-card-title>Development Work</md-card-title>
+  <swiper [config]="configSlides">
+    <div class="slide" *ngFor="let slide of webSlides">
+      <figure>
+        <img [src]="slide.pic" [alt]="slide.title">
+        <figcaption>{{ slide.title }}</figcaption>
+      </figure>
+      <div class="desc">
+        <div [innerHtml]="slide.desc"></div>
+      </div>
+    </div>
+  </swiper>
 </md-card>

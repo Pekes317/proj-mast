@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { SwiperConfigInterface } from 'angular2-swiper-wrapper';
 
 import { pmSlideNav } from '../../shared/pm-animation';
-import { PmGraphic } from '../../shared/pm-interface';
+import { PmGraphicSlide } from '../../shared/pm-interface';
 
 @Component({
   selector: 'app-pm-graphics',
@@ -21,7 +20,7 @@ export class PmGraphicsComponent implements OnInit {
     paginationClickable: true,
     prevButton: '.swiper-button-prev'
    };
-  graphicSlides: Array<PmGraphic> = require('./pm-graphic.json');
+  graphicSlides: Array<PmGraphicSlide> = require('./pm-graphic.json');
 
   constructor() { }
 

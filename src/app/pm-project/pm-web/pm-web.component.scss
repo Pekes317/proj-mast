@@ -3,4 +3,22 @@
 .code {
   width: 80%;
   @include pm-bg-card;
+  
+  .slide {
+    display: inline-flex;
+    
+    figure {
+      max-width: 25vw;
+      text-align: center;
+      
+      figcaption {
+        padding-top: .5rem;
+      }
+    }
+    
+    .desc {
+      flex: 1 1 auto;
+      margin-left: .75rem;
+    }
+  }
 }

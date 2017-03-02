@@ -26,7 +26,13 @@ export interface PmSkill {
 	level: number;
 }
 
-export interface PmGraphic {
+export interface PmGraphicSlide {
+	title: string;
+	pic: string;
+	desc: string;
+}
+
+export interface PmWebSlide {
 	title: string;
 	pic: string;
 	desc: string;
