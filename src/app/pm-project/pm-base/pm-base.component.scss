@@ -3,4 +3,19 @@
 .pm-proj-base {
   width: 80%;
   @include pm-bg-card;
+
+  .body-text {
+
+    p {
+      line-height: 1.25rem;
+      margin-bottom: .75rem;
+    }
+  }
+  
+  .old-site {
+  
+    a {
+      border: 1px currentColor solid;
+    }
+  }
 }

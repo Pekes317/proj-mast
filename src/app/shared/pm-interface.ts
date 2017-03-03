@@ -36,4 +36,5 @@ export interface PmWebSlide {
 	title: string;
 	pic: string;
 	desc: string;
+	url: string;
 }

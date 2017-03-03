@@ -1,16 +1,20 @@
 [{
     "title": "EBC Hybrid Mobile App",
     "pic": "assets/web/ebc-app.png",
-    "desc": "<p>Cool</p>"
+    "desc": "<p>Cool</p>",
+    "url": "https://github.com/Pekes317/ebc"
   },
   {
     "title": "EBC App's Web Portal",
     "pic": "assets/web/ebc-web.png",
-    "desc": ""
+    "desc": "",
+    "url": "https://github.com/Pekes317/ebc-back"
+
   },
   {
     "title": "Project Mast Site",
     "pic": "assets/web/pm-web.png",
-    "desc": ""
+    "desc": "",
+    "url": "https://github.com/Pekes317/proj-mast"
   }
 ]

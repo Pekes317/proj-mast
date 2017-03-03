@@ -17,8 +17,20 @@
     }
     
     .desc {
+      align-items: flex-start;
+      display: inline-flex;
       flex: 1 1 auto;
+      flex-direction: column;
+      justify-content: space-between;
       margin-left: .75rem;
+
+      div:nth-child(2) {
+        align-self: center;
+      }
+
+      a {
+        border: currentColor 1px solid;
+      }
     }
   }
 }

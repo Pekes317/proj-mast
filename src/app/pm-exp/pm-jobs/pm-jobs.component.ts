@@ -11,10 +11,11 @@ import { pmFadeInOut, pmSlideNav } from '../../shared/pm-animation';
 })
 export class PmJobsComponent implements OnInit {
   achieves: Array<string> = [
-    'Elected to lead team daily meeting',
+    'Elected to lead daily team meeting',
     'Became lead email template creator with mobile in mind',
     'Played a key part in several site migrations',
-    'Became a valuable resource for Business Partners'
+    'Became a valuable resource for Business Partners',
+    'Developed into a subject matter expert within 18 months'
   ];
   fadeIn: boolean = false;
 
