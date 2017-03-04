@@ -7,13 +7,14 @@
   }
   .nav-btns {
     display: inline-block;
+    position: relative;
     width: 100%;
+    
     &:hover {
-      position: relative;
       md-icon {
         color: transparent;
       }
-      &:after {
+      &::after {
         content: attr(name);
         font-weight: 600;
         left: 0;
@@ -22,6 +23,10 @@
         text-align: center;
         width: 100%;
       }
+    }
+
+    &::after {
+      background-color: transparent;
     }
   }
 }
@@ -43,5 +48,43 @@
 
   :host-context(.pm-dark) & {
     color: #fff;
+  }
+}
+
+@mixin pm-subnav {
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+
+  &:hover::before {
+    transform: scaleX(1);
+  }
+
+  &::before {
+    border-bottom: 2px solid currentColor;
+    bottom: 0;
+    box-sizing: border-box;
+    content: '';
+    display: block;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    transform: scaleX(0);
+    transition: transform .3s;
+    width: 100%;
+  }
+}
+
+@mixin pm-subnav-active {
+  color: mat-color($pm-primary);
+  position: relative;
+
+  &::after {
+    content: 'forward';
+    display: inline-block;
+    font-family: 'Material Icons';
+    transform: rotate(180deg);
+    position: absolute;
+    right: 1%;
   }
 }

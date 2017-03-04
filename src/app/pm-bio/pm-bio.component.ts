@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
@@ -12,7 +12,6 @@ export class PmBioComponent implements OnInit {
   constructor(private santize: DomSanitizer) { }
 
   ngOnInit() {
-    this.bld = this.santize.bypassSecurityTrustResourceUrl('../../assets/svg/bio-building.svg')
+    this.bld = this.santize.bypassSecurityTrustResourceUrl('../../assets/svg/bio-building.svg');
   }
-
 }

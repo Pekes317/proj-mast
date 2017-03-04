@@ -1,15 +1,19 @@
-@import '../theme/app.theme';
-@import '../theme/app.mixins';
+@import '../theme/app.theme',
+ '../theme/app.mixins';
 
 nav {
-  @include pm-padding;
+  @include pm-padding();
   position: relative;
   z-index: 9999;
-  @include nav-btns;
+  @include nav-btns();
   
   .mobile-menu-btn {
     position: absolute;
     right: .75rem;
+  }
+
+  .btns {
+    @include pm-subnav();
   }
 }
 

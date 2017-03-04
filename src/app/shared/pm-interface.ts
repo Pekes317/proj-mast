@@ -23,7 +23,7 @@ export interface PmSkills {
 
 export interface PmSkill {
 	name: string;
-	level: number;
+	context: string;
 }
 
 export interface PmGraphicSlide {

@@ -1,7 +1,16 @@
-@import '../../theme/app.mixins';
+@import '../../theme/app.mixins',
+  '../../theme/app.theme';
 
 .side-nav {
 	@include pm-padding(.75rem, 0);
+
+  .active-sub {
+    @include pm-subnav-active();
+  }
+
+  .btns {
+    @include pm-subnav();
+  }
 }
 
 .dk-knight {
@@ -11,3 +20,4 @@
   width: 30vw;
   z-index: 0;
 }
+

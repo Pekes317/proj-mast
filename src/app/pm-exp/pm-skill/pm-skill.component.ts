@@ -12,18 +12,10 @@ export class PmSkillComponent implements OnInit {
   level: number = 0;
   skill: PmSkill = {
     name: '',
-    level: null
+    context: ''
   };
 
   constructor(private dialogRef:MdDialogRef<PmSkillComponent>) { }
 
-  ngOnInit() {
-    let load = setInterval(() => {
-      this.level += 1;
-      if (this.level === this.skill.level) {
-        clearInterval(load);
-      }
-    }, 50);
-  }
-
+  ngOnInit() { }
 }

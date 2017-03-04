@@ -1,10 +1,11 @@
 import { animate, state, style, transition, trigger } from '@angular/core';
 
-export const pmSlideUpDown = trigger('slideUpDown', [
-	state('in', style({ transform: 'translateY(0)' })),
-	state('out', style({ transform: 'translateY(-100vh)' })),
-	transition('in => out', animate('1s ease')),
-	transition('out => in', animate('1s ease'))
+export const pmGrowInOut = trigger('growInOut', [
+	state('*', style({ opacity: 1, transform: 'none' })),
+	state('void', style({ opacity: 0, transform: 'none'  })),
+	transition('* => *', [
+		animate('2s ease-in-out')
+	])
 ]);
 
 export const pmSlideNav = trigger('slideNav', [

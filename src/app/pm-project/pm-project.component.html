@@ -2,9 +2,9 @@
 
 <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start start" fxLayoutGap="1vw">
   <div class="side-nav" fxLayout.xs="row" fxLayout="column">
-    <a md-button routerLink="./">Projects Home</a>
-    <a md-button routerLink="./graphic">Graphics</a>
-    <a md-button routerLink="./code">Web Design</a>
+    <a class="btns" md-button routerLink="./" routerLinkActive="active-sub" [routerLinkActiveOptions]="{ exact: true }">Projects Home</a>
+    <a class="btns" md-button routerLink="./graphic" routerLinkActive="active-sub">Graphics</a>
+    <a class="btns" md-button routerLink="./code" routerLinkActive="active-sub">Web Design</a>
   </div>
   <div>
     <router-outlet></router-outlet>

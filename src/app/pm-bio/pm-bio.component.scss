@@ -1,17 +1,18 @@
-@import '../../theme/app.theme';
+@import '../../theme/app.theme',
+'../../theme/app.mixins';
 
 .bio {
   position: relative;
-  
+ 
   .bld {
-    bottom: -.5vw;
+    bottom: 0;
     left: -1.66vw;
     max-width: 60vw;
     position: fixed;
     width: 100%;
     z-index: 0;
   }
-  
+ 
   .profile-pic {
     border: .35rem solid rgba(mat-color($pm-accent), .8);
     margin-bottom: 2vw;
@@ -19,9 +20,14 @@
     min-width: 4.5rem;
     position: relative;
     z-index: 1;
-    
+ 
      :host-context(.pm-dark) & {
       border: .35rem solid rgba(mat-color($dk-pm-accent), .8);
     }
+  }
+ 
+  .bio-text {
+    @include pm-bg-card;
+    @include pm-text;
   }
 }

@@ -3,7 +3,7 @@
    <nav fxLayout="row" fxLayoutAlign="space-between start" fxLayoutAlign.xs="center">
       <app-pm-logo fxFlex="33vw" fxFlex.xs=""></app-pm-logo>
       <div fxLayout="row" fxLayoutAlign="center center" fxHide="false" fxHide.xs fxFlex="30vw">
-        <a *ngFor="let item of navItems" [name]="item.name" class="nav-btns" [routerLink]="item.path" md-button routerLinkActive="active" [routerLinkActiveOptions]="item.match">
+        <a *ngFor="let item of navItems" [name]="item.name" class="nav-btns btns" [routerLink]="item.path" md-button routerLinkActive="active" [routerLinkActiveOptions]="item.match">
           <md-icon>{{item.icon}}</md-icon>
         </a>
       </div>
