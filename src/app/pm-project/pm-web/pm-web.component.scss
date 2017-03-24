@@ -5,7 +5,12 @@
   @include pm-bg-card;
   
   .slide {
+    cursor: grab;
     display: inline-flex;
+
+    &:active {
+      cursor: grabbing;
+    }
     
     figure {
       max-width: 25vw;

@@ -13,7 +13,7 @@ $pm-primary: mat-palette($mat-green, A700);
 $pm-accent:  mat-palette($mat-grey, 500, 900, 300);
 
 // The warn palette is optional (defaults to red).
-$pm-warn:    mat-palette($mat-deep-purple, 900);
+$pm-warn:    mat-palette($mat-deep-orange, 900);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $pm-theme: mat-light-theme($pm-primary, $pm-accent, $pm-warn);

@@ -1,22 +1,22 @@
 <h2 md-dialog-title>Contact Me</h2>
 <div class="contact-form">
-  <form>
+  <form [formGroup]="contactForm" (ngSubmit)="sendEmail()">
     <div fxLayout="column" fxLayoutAlign="center center">
-      <div>Direct email <a href="mailto:prmast@projectmast.com">prmast@projectmast.com</a> or</div>
-      <md-input-container>
-        <input matInput type="text" placeholder="Your Name">
+      <div class="contact-direct">Direct email <a href="mailto:prmast@projectmast.com">prmast@projectmast.com</a> or</div>
+      <md-input-container [dividerColor]="contactForm.valid ? 'primary' : 'warn'">
+        <input matInput type="text" placeholder="Your Name" formControlName="sender">
         <span md-prefix>
           <md-icon color="accent">person_outline</md-icon>&nbsp;
         </span>
       </md-input-container>
-      <md-input-container>
-        <input matInput type="email" placeholder="From Email">
+      <md-input-container [dividerColor]="contactForm.valid ? 'primary' : 'warn'">
+        <input matInput type="email" placeholder="From Email" formControlName="email">
         <span md-prefix>
             <md-icon color="accent">mail</md-icon>&nbsp;
         </span>
       </md-input-container>
-      <md-input-container>
-        <textarea matInput type="text" placeholder="Message"></textarea>
+      <md-input-container [dividerColor]="contactForm.valid ? 'primary' : 'warn'">
+        <textarea matInput type="text" placeholder="Message" formControlName="message"></textarea>
         <span md-prefix>
             <md-icon color="accent">subject</md-icon>&nbsp;
         </span>
@@ -24,7 +24,7 @@
     </div>
     <md-dialog-actions>
       <button md-dialog-close md-button color="warn" type="button">Back</button>
-      <button md-button color="primary" type="submit">Send</button>
+      <button md-button color="primary" type="submit" [disabled]="!contactForm.valid">Send</button>
     </md-dialog-actions>
   </form>
 </div>
