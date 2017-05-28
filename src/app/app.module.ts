@@ -34,7 +34,7 @@ import { PmSocialComponent } from './pm-social/pm-social.component';
     FlexLayoutModule,
     FormsModule,
     HttpModule,
-    MaterialModule.forRoot(),
+    MaterialModule,
     PmExpModule,
     PmProjectModule,
     ReactiveFormsModule
