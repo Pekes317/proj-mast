@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { Observable } from 'rxjs';
@@ -14,17 +15,26 @@ import { PmSkillComponent } from '../pm-skill/pm-skill.component';
   host: { '[@slideNav]': '' }
 })
 export class PmSkillsComponent implements OnInit {
+  apps: Array<PmSkill>;
   coding: Array<PmSkill>;
   frameworks: Array<PmSkill>;
-  skills: Array<PmSkills> = require('./pm-skills.json');
-  apps: Array<PmSkill>;
+  skills: Array<PmSkills> = [];
+  tempArray: Array<any> = []
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog, private http: HttpClient) { }
 
   ngOnInit() {
-    this.getList('languages');
-    this.getList('frameworks');
-    this.getList('software');
+    this.http.get('./assets/data/pm-skills.json')
+      .subscribe(data => {
+        this.tempArray.push(data);
+        this.skills = this.tempArray[0];
+      },
+      err => console.log(err),
+      () => {
+        this.getList('languages');
+        this.getList('frameworks');
+        this.getList('software');
+      });
   }
 
   getList(category: string) {

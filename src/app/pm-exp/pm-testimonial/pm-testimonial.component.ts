@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -13,17 +14,27 @@ import { PmFeedback } from '../../shared/pm-interface';
 })
 export class PmTestimonialComponent implements OnInit {
   message: PmFeedback;
-  messages: Array<PmFeedback> = require('./pm-testimonial.data.json');
+  messages: Array<PmFeedback> = [];
+  newMess: Array<any> = [];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.message = this.messages.find(mess => {
-      return mess.id === 6;
-    })
-    setTimeout(() => {
-      this.getFeed();
-    }, 5000);
+    this.http.get('./assets/data/pm-testimonial.data.json')
+      .subscribe(
+      data => {
+        this.newMess.push(data);
+        this.messages = this.newMess[0];
+      },
+      err => console.log(err),
+      () => {
+        this.message = this.messages.find(mess => {
+          return mess.id === 6;
+        })
+        setTimeout(() => {
+          this.getFeed();
+        }, 5000);
+      });
   }
 
   getFeed() {

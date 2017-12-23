@@ -32,7 +32,7 @@ import { PmSocialComponent } from './pm-social/pm-social.component';
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'pm-server' }),
     FlexLayoutModule,
     FormsModule,
     HttpClientModule,

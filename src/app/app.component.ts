@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { MatListItem } from '@angular/material';
 import { Title } from '@angular/platform-browser';
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { Router, ActivationEnd,  ChildActivationEnd, ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/mergeMap';
 
 import { PmNav } from './shared/pm-interface';
@@ -27,16 +27,18 @@ export class AppComponent implements OnInit {
     private title: Title) { }
 
   ngOnInit() {
-    /*this.router.events
-      .filter(event => event instanceof NavigationEnd)
-      .map(() => this.active)
-      .map(route => {
-        while (route.firstChild) route = route.firstChild;
-        return route;
+      this.router.events
+      .subscribe(evt => {
+        if(evt instanceof ActivationEnd) {
+          let activeRoute = evt.snapshot;
+          if(activeRoute.firstChild !== null) {
+            let childTitle = activeRoute.firstChild
+            this.title.setTitle(childTitle.data['title']);
+          } else {
+            this.title.setTitle(activeRoute.data['title']);
+          }
+        }
       })
-      .filter(route => route.outlet === 'primary')
-      .mergeMap(route => route.data)
-      .subscribe((event) => this.title.setTitle(event['title']));*/
   }
 
   ngAfterViewInit() {

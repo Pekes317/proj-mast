@@ -7,18 +7,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./pm-logo.component.scss']
 })
 export class PmLogoComponent implements OnInit {
-  title: Object = {
+  name = {
     first: 'Project',
     last: 'Mast'
   }
 
   constructor(private router: Router) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   toHome() {
-    console.log('click');
     this.router.navigate(['']);
   }
 }

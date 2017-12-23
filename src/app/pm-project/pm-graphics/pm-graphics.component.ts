@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
@@ -23,11 +24,20 @@ export class PmGraphicsComponent implements OnInit {
       el: '.swiper-pagination',
       clickable: true
     }
-   };
-  graphicSlides: Array<PmGraphicSlide> = require('./pm-graphic.json');
+  };
+  newSlide: Array<any> = [];
+  graphicSlides: Array<PmGraphicSlide> = [];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  ngOnInit() { }
-
+  ngOnInit() {
+    this.http.get('./assets/data/pm-graphic.json')
+      .subscribe(data => {
+        this.newSlide.push(data);
+      },
+      err => console.log(err),
+      () => {
+        this.graphicSlides = this.newSlide[0];
+      });
+  }
 }

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
@@ -24,9 +25,19 @@ export class PmWebComponent implements OnInit {
       clickable: true
     }
   };
-  webSlides: Array<PmWebSlide> = require('./pm-web.json');
+  newSlide: Array<any> = [];
+  webSlides: Array<PmWebSlide> = [];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.http.get('./assets/data/pm-web.json')
+      .subscribe(data => {
+        this.newSlide.push(data);
+      },
+      err => console.log(err),
+      () => {
+        this.webSlides = this.newSlide[0];
+      });
+  }
 }
