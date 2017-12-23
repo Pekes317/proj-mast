@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MdDialogRef } from '@angular/material';
+import { MatDialogRef } from '@angular/material';
 
 import { PmSkill } from '../../shared/pm-interface';
 
@@ -15,7 +15,7 @@ export class PmSkillComponent implements OnInit {
     context: ''
   };
 
-  constructor(private dialogRef:MdDialogRef<PmSkillComponent>) { }
+  constructor(private dialogRef:MatDialogRef<PmSkillComponent>) { }
 
   ngOnInit() { }
 }

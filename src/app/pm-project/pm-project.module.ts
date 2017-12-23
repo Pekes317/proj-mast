@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MaterialModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
-import { SwiperModule } from 'angular2-swiper-wrapper';
+import { SwiperModule } from 'ngx-swiper-wrapper';
 
+import { PmBaseComponent } from './pm-base/pm-base.component';
+import { PmGraphicsComponent } from './pm-graphics/pm-graphics.component';
+import { PmMaterialModule } from '../pm-material/pm-material.module';
 import { PmProjectComponent } from './pm-project.component';
 import { PmRoofComponent } from './pm-roof/pm-roof.component';
 import { PmWebComponent } from './pm-web/pm-web.component';
-import { PmGraphicsComponent } from './pm-graphics/pm-graphics.component';
-import { PmBaseComponent } from './pm-base/pm-base.component';
+
 
 const projectRoutes: Routes = [
   { path: 'projects', component: PmProjectComponent,
@@ -25,16 +26,16 @@ const projectRoutes: Routes = [
   imports: [
     CommonModule,
     FlexLayoutModule,
-    MaterialModule,
+    PmMaterialModule,
     RouterModule.forChild(projectRoutes),
     SwiperModule
   ],
   declarations: [
+    PmBaseComponent,
+    PmGraphicsComponent,
     PmProjectComponent,
     PmRoofComponent,
-    PmWebComponent,
-    PmGraphicsComponent,
-    PmBaseComponent
+    PmWebComponent
   ]
 })
 export class PmProjectModule { }

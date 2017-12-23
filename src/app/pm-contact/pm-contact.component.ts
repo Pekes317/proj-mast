@@ -1,7 +1,7 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Headers, Http } from '@angular/http';
-import { MdSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-pm-contact',
@@ -15,7 +15,7 @@ export class PmContactComponent implements OnInit {
   sender: FormControl = new FormControl('', Validators.required);
   url: string = 'email/'
 
-  constructor(private http: Http, private snack: MdSnackBar) { }
+  constructor(private http: HttpClient, private snack: MatSnackBar) { }
 
   ngOnInit() {
     this.contactForm = new FormGroup({
@@ -37,13 +37,13 @@ export class PmContactComponent implements OnInit {
       `&message=${this.message.value}` +
       `&sender=${this.sender.value}`;
 
-    let header = new Headers();
+    let header = new HttpHeaders();
     header.append('Content-Type', 'application/x-www-form-urlencoded');
 
     let post = this.http.post(this.url, call,
       {
         headers: header
-      }).map(res => res.text())
+      }).map(res => res.toString())
       .subscribe(
       res => {
         console.log(res);

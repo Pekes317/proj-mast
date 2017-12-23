@@ -1,30 +1,30 @@
-<h2 md-dialog-title>Contact Me</h2>
+<h2 mat-dialog-title>Contact Me</h2>
 <div class="contact-form">
   <form [formGroup]="contactForm" (ngSubmit)="sendEmail()">
     <div fxLayout="column" fxLayoutAlign="center center">
       <div class="contact-direct">Direct email <a href="mailto:prmast@projectmast.com">prmast@projectmast.com</a> or</div>
-      <md-input-container [dividerColor]="contactForm.valid ? 'primary' : 'warn'">
+      <mat-input-container [dividerColor]="contactForm.valid ? 'primary' : 'warn'">
         <input matInput type="text" placeholder="Your Name" formControlName="sender">
-        <span md-prefix>
-          <md-icon color="accent">person_outline</md-icon>&nbsp;
+        <span mat-prefix>
+          <mat-icon color="accent">person_outline</mat-icon>&nbsp;
         </span>
-      </md-input-container>
-      <md-input-container [dividerColor]="contactForm.valid ? 'primary' : 'warn'">
+      </mat-input-container>
+      <mat-input-container [dividerColor]="contactForm.valid ? 'primary' : 'warn'">
         <input matInput type="email" placeholder="From Email" formControlName="email">
-        <span md-prefix>
-            <md-icon color="accent">mail</md-icon>&nbsp;
+        <span mat-prefix>
+            <mat-icon color="accent">mail</mat-icon>&nbsp;
         </span>
-      </md-input-container>
-      <md-input-container [dividerColor]="contactForm.valid ? 'primary' : 'warn'">
+      </mat-input-container>
+      <mat-input-container [dividerColor]="contactForm.valid ? 'primary' : 'warn'">
         <textarea matInput type="text" placeholder="Message" formControlName="message"></textarea>
-        <span md-prefix>
-            <md-icon color="accent">subject</md-icon>&nbsp;
+        <span mat-prefix>
+            <mat-icon color="accent">subject</mat-icon>&nbsp;
         </span>
-      </md-input-container>
+      </mat-input-container>
     </div>
-    <md-dialog-actions>
-      <button md-dialog-close md-button color="warn" type="button">Back</button>
-      <button md-button color="primary" type="submit" [disabled]="!contactForm.valid">Send</button>
-    </md-dialog-actions>
+    <mat-dialog-actions>
+      <button mat-dialog-close mat-button color="warn" type="button">Back</button>
+      <button mat-button color="primary" type="submit" [disabled]="!contactForm.valid">Send</button>
+    </mat-dialog-actions>
   </form>
 </div>

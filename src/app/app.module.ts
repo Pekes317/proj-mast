@@ -1,8 +1,8 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
@@ -13,6 +13,7 @@ import { PmExpModule } from './pm-exp/pm-exp.module';
 import { PmHeroComponent } from './pm-hero/pm-hero.component';
 import { PmHomeComponent } from './pm-home/pm-home.component';
 import { PmLogoComponent } from './pm-logo/pm-logo.component';
+import { PmMaterialModule } from './pm-material/pm-material.module';
 import { PmProjectModule } from './pm-project/pm-project.module';
 import { PmSkylineComponent } from './pm-skyline/pm-skyline.component';
 import { PmSocialComponent } from './pm-social/pm-social.component';
@@ -30,12 +31,13 @@ import { PmSocialComponent } from './pm-social/pm-social.component';
   ],
   imports: [
     AppRoutingModule,
+    BrowserAnimationsModule,
     BrowserModule,
     FlexLayoutModule,
     FormsModule,
-    HttpModule,
-    MaterialModule,
+    HttpClientModule,
     PmExpModule,
+    PmMaterialModule,
     PmProjectModule,
     ReactiveFormsModule
   ],

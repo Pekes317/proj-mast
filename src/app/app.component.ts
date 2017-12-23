@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { MdListItem } from '@angular/material';
+import { MatListItem } from '@angular/material';
 import { Title } from '@angular/platform-browser';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/mergeMap';
@@ -12,7 +12,7 @@ import { PmNav } from './shared/pm-interface';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  @ViewChildren('btns') btns: QueryList<MdListItem>;
+  @ViewChildren('btns') btns: QueryList<MatListItem>;
 
   darkTheme: boolean = false;
   navItems: Array<PmNav> = [
@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
     private title: Title) { }
 
   ngOnInit() {
-    this.router.events
+    /*this.router.events
       .filter(event => event instanceof NavigationEnd)
       .map(() => this.active)
       .map(route => {
@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
       })
       .filter(route => route.outlet === 'primary')
       .mergeMap(route => route.data)
-      .subscribe((event) => this.title.setTitle(event['title']));
+      .subscribe((event) => this.title.setTitle(event['title']));*/
   }
 
   ngAfterViewInit() {

@@ -1,32 +1,32 @@
 <div [class.pm-dark]="darkTheme">
-  <md-sidenav-container fullscreen>
+  <mat-sidenav-container fullscreen>
    <nav fxLayout="row" fxLayoutAlign="space-between start" fxLayoutAlign.xs="center">
       <app-pm-logo fxFlex="33vw" fxFlex.xs=""></app-pm-logo>
       <div fxLayout="row" fxLayoutAlign="center center" fxHide="false" fxHide.xs fxFlex="30vw">
-        <a *ngFor="let item of navItems" [name]="item.name" class="nav-btns btns" [routerLink]="item.path" md-button routerLinkActive="active" [routerLinkActiveOptions]="item.match">
-          <md-icon>{{item.icon}}</md-icon>
+        <a *ngFor="let item of navItems" [name]="item.name" class="nav-btns btns" [routerLink]="item.path" mat-button routerLinkActive="active" [routerLinkActiveOptions]="item.match">
+          <mat-icon>{{item.icon}}</mat-icon>
         </a>
       </div>
       <div fxHide="false" fxHide.xs fxFlex="25vw">&nbsp;</div>
       <div class="mobile-menu-btn" fxFlexAlign="center" fxShow="false" fxShow.xs>
-        <button md-icon-button (click)="mobile.toggle()">
-        <md-icon>menu</md-icon>
+        <button mat-icon-button (click)="mobile.toggle()">
+        <mat-icon>menu</mat-icon>
       </button>
       </div>
     </nav>
-    <md-sidenav #mobile align="end">
-      <md-nav-list class="mobile-menu">
-        <a #btns *ngFor="let item of navItems" [name]="item.name" class="nav-btns" [routerLink]="item.path" md-list-item routerLinkActive="active" (click)="mobile.close()" [routerLinkActiveOptions]="item.match">
-          <md-icon>{{item.icon}}</md-icon>
+    <mat-sidenav #mobile align="end">
+      <mat-nav-list class="mobile-menu">
+        <a #btns *ngFor="let item of navItems" [name]="item.name" class="nav-btns" [routerLink]="item.path" mat-list-item routerLinkActive="active" (click)="mobile.close()" [routerLinkActiveOptions]="item.match">
+          <mat-icon>{{item.icon}}</mat-icon>
         </a>
-      </md-nav-list>
-    </md-sidenav>
+      </mat-nav-list>
+    </mat-sidenav>
      <div class="dark-toggle" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start start">
-      <md-slide-toggle [(ngModel)]="darkTheme">Dark Mode</md-slide-toggle>
+      <mat-slide-toggle [(ngModel)]="darkTheme">Dark Mode</mat-slide-toggle>
       <app-pm-social></app-pm-social>
     </div>
     <main class="my-content">
       <router-outlet></router-outlet>
     </main>
-  </md-sidenav-container>
+  </mat-sidenav-container>
 </div>

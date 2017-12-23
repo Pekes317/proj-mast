@@ -1,22 +1,22 @@
-<md-card class="skills">
-  <md-card-title>Skills</md-card-title>
-  <md-card-content>
+<mat-card class="skills">
+  <mat-card-title>Skills</mat-card-title>
+  <mat-card-content>
     <div class="list" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-around start">
-      <md-nav-list>
-        <h3 md-subheader>Languages</h3>
-        <md-divider></md-divider>
-        <md-list-item *ngFor="let code of coding" (click)="skillDets(code)">{{ code.name }}</md-list-item>
-      </md-nav-list>
-      <md-nav-list>
-        <h3 md-subheader>Frameworks</h3>
-        <md-divider></md-divider>
-        <md-list-item *ngFor="let work of frameworks" (click)="skillDets(work)">{{ work.name }}</md-list-item>
-      </md-nav-list>
-      <md-nav-list>
-        <h3 md-subheader>Software/Tools</h3>
-        <md-divider></md-divider>
-        <md-list-item *ngFor="let app of apps" (click)="skillDets(app)">{{ app.name }}</md-list-item>
-      </md-nav-list>
+      <mat-nav-list>
+        <h3 mat-subheader>Languages</h3>
+        <mat-divider></mat-divider>
+        <mat-list-item *ngFor="let code of coding" (click)="skillDets(code)">{{ code.name }}</mat-list-item>
+      </mat-nav-list>
+      <mat-nav-list>
+        <h3 mat-subheader>Frameworks</h3>
+        <mat-divider></mat-divider>
+        <mat-list-item *ngFor="let work of frameworks" (click)="skillDets(work)">{{ work.name }}</mat-list-item>
+      </mat-nav-list>
+      <mat-nav-list>
+        <h3 mat-subheader>Software/Tools</h3>
+        <mat-divider></mat-divider>
+        <mat-list-item *ngFor="let app of apps" (click)="skillDets(app)">{{ app.name }}</mat-list-item>
+      </mat-nav-list>
     </div>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>

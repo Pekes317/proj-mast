@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MdDialog, MdIconRegistry } from '@angular/material';
+import { MatDialog, MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 
 import { PmSocial } from '../shared/pm-interface';
@@ -18,7 +18,7 @@ export class PmSocialComponent implements OnInit {
     { svgIcon: 'xda', tip: 'XDA Profile', link: 'https://forum.xda-developers.com/member.php?u=4905136' }
   ];
 
-  constructor(private dialog: MdDialog, private mdReg: MdIconRegistry, private sanitize: DomSanitizer) {
+  constructor(private dialog: MatDialog, private mdReg: MatIconRegistry, private sanitize: DomSanitizer) {
     mdReg.addSvgIconSetInNamespace('social', sanitize.bypassSecurityTrustResourceUrl('../../assets/icons/icons-social.svg'));
   }
 

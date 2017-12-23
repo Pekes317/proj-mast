@@ -1,5 +1,5 @@
-<md-card class="code">
-  <md-card-title>Development Work</md-card-title>
+<mat-card class="code">
+  <mat-card-title>Development Work</mat-card-title>
   <swiper [config]="configSlides">
     <div class="slide" *ngFor="let slide of webSlides">
       <figure>
@@ -9,9 +9,9 @@
       <div class="desc">
         <div [innerHtml]="slide.desc"></div>
         <div>
-          <a md-button color="primary" [href]="slide.url" target="_blank">Github Repository</a>
+          <a mat-button color="primary" [href]="slide.url" target="_blank">Github Repository</a>
         </div>
       </div>
     </div>
   </swiper>
-</md-card>
+</mat-card>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SwiperConfigInterface } from 'angular2-swiper-wrapper';
+import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
 import { pmSlideNav } from '../../shared/pm-animation';
 import { PmWebSlide } from '../../shared/pm-interface';
@@ -14,11 +14,15 @@ import { PmWebSlide } from '../../shared/pm-interface';
 export class PmWebComponent implements OnInit {
   configSlides: SwiperConfigInterface = {
     direction: 'horizontal',
-    keyboardControl: true,
-    nextButton: '.swiper-button-next',
-    pagination: '.swiper-pagination',
-    paginationClickable: true,
-    prevButton: '.swiper-button-prev'
+    keyboard: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
   };
   webSlides: Array<PmWebSlide> = require('./pm-web.json');
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MdDialog } from '@angular/material';
+import { MatDialog } from '@angular/material';
 import { Observable } from 'rxjs';
 
 import { pmSlideNav } from '../../shared/pm-animation';
@@ -19,7 +19,7 @@ export class PmSkillsComponent implements OnInit {
   skills: Array<PmSkills> = require('./pm-skills.json');
   apps: Array<PmSkill>;
 
-  constructor(private dialog: MdDialog) { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
     this.getList('languages');
