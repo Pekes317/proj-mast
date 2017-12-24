@@ -16,7 +16,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "universal": "ng build --prod && ng build --prod --app pm-server --output-hashing=none",
-    "univ-dev": "ng build && ng build --app pm-server --output-hashing=none"
+    "univ-dev": "ng build --aot && ng build --aot --app pm-server --output-hashing=none"
   },
   "private": true,
   "dependencies": {
