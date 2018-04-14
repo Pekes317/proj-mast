@@ -9,7 +9,8 @@ import * as express from 'express';
 
 import { ApplicationModule } from './modules/app.module';
 const dist = `${process.cwd()}/dist`;
-const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require(`${dist}/public/main.bundle`);
+const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require(`${dist}/public/main`);
+const port = process.env.PORT || '50200';
 
 const configuredNgExpressEngine = ngExpressEngine({
   bootstrap: AppServerModuleNgFactory,
@@ -24,5 +25,7 @@ app.then(instance => {
   instance.set('view engine', 'html');
   instance.set('views', `${dist}/views`);  
   instance.use(express.static(`${dist}/views`));
-  instance.listen(3000, () => console.log('Application is listening on port 3000'))
+  instance.listen(port, () => console.log(`Application is listening on port ${port}`))
 });
+
+module.exports = app;
