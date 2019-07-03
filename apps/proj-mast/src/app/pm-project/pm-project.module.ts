@@ -11,31 +11,20 @@ import { PmProjectComponent } from './pm-project.component';
 import { PmRoofComponent } from './pm-roof/pm-roof.component';
 import { PmWebComponent } from './pm-web/pm-web.component';
 
-
 const projectRoutes: Routes = [
-  { path: 'projects', component: PmProjectComponent,
-    children: [ 
+  {
+    path: 'projects',
+    component: PmProjectComponent,
+    children: [
       { path: '', component: PmBaseComponent, data: { title: 'Projects | Project Mast' } },
       { path: 'graphic', component: PmGraphicsComponent, data: { title: 'Graphics | Project Mast' } },
       { path: 'code', component: PmWebComponent, data: { title: 'Code | Project Mast' } }
     ]
   }
-]
+];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FlexLayoutModule,
-    PmMaterialModule,
-    RouterModule.forChild(projectRoutes),
-    SwiperModule
-  ],
-  declarations: [
-    PmBaseComponent,
-    PmGraphicsComponent,
-    PmProjectComponent,
-    PmRoofComponent,
-    PmWebComponent
-  ]
+  imports: [CommonModule, FlexLayoutModule, PmMaterialModule, RouterModule.forChild(projectRoutes), SwiperModule],
+  declarations: [PmBaseComponent, PmGraphicsComponent, PmProjectComponent, PmRoofComponent, PmWebComponent]
 })
-export class PmProjectModule { }
+export class PmProjectModule {}

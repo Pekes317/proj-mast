@@ -6,7 +6,7 @@ import { pmSlideNav } from '../../shared/pm-animation';
 import { PmGraphicSlide } from '../../shared/pm-interface';
 
 @Component({
-  selector: 'app-pm-graphics',
+  selector: 'pm-graphics',
   templateUrl: './pm-graphics.component.html',
   styleUrls: ['./pm-graphics.component.scss'],
   animations: [pmSlideNav],
@@ -28,16 +28,17 @@ export class PmGraphicsComponent implements OnInit {
   newSlide: Array<any> = [];
   graphicSlides: Array<PmGraphicSlide> = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.http.get('./assets/data/pm-graphic.json')
-      .subscribe(data => {
+    this.http.get('./assets/data/pm-graphic.json').subscribe(
+      data => {
         this.newSlide.push(data);
       },
       err => console.log(err),
       () => {
         this.graphicSlides = this.newSlide[0];
-      });
+      }
+    );
   }
 }

@@ -6,7 +6,7 @@ import { pmSlideNav } from '../../shared/pm-animation';
 import { PmWebSlide } from '../../shared/pm-interface';
 
 @Component({
-  selector: 'app-pm-web',
+  selector: 'pm-web',
   templateUrl: './pm-web.component.html',
   styleUrls: ['./pm-web.component.scss'],
   animations: [pmSlideNav],
@@ -28,16 +28,17 @@ export class PmWebComponent implements OnInit {
   newSlide: Array<any> = [];
   webSlides: Array<PmWebSlide> = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.http.get('./assets/data/pm-web.json')
-      .subscribe(data => {
+    this.http.get('./assets/data/pm-web.json').subscribe(
+      data => {
         this.newSlide.push(data);
       },
       err => console.log(err),
       () => {
         this.webSlides = this.newSlide[0];
-      });
+      }
+    );
   }
 }

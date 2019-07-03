@@ -1,21 +1,25 @@
 @import '../../theme/app.theme';
 
 .contact-form {
-	min-width: 35vw;
+  min-width: 35vw;
 
-	.contact-direct {
-		margin-bottom: 1rem;
-	}
+  .contact-direct {
+    margin-bottom: 1rem;
+  }
 
-	.input-fields {
-		width: 100%;
-	}
+  .input-fields {
+    width: 100%;
 
-	a {
-		color: mat-color($pm-primary);
+    .icon {
+      margin-right: 1rem;
+    }
+  }
 
-		&:hover {
-			text-decoration: underline;
-		}
-	}
+  a {
+    color: mat-color($pm-primary);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

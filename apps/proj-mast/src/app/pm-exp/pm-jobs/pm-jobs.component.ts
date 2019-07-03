@@ -3,10 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { pmFadeInOut, pmSlideNav } from '../../shared/pm-animation';
 
 @Component({
-  selector: 'app-pm-jobs',
+  selector: 'pm-jobs',
   templateUrl: './pm-jobs.component.html',
   styleUrls: ['./pm-jobs.component.scss'],
-  animations: [ pmFadeInOut, pmSlideNav],
+  animations: [pmFadeInOut, pmSlideNav],
   host: { '[@slideNav]': '' }
 })
 export class PmJobsComponent implements OnInit {
@@ -19,7 +19,7 @@ export class PmJobsComponent implements OnInit {
   ];
   fadeIn: boolean = false;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     setTimeout(() => {
@@ -27,7 +27,5 @@ export class PmJobsComponent implements OnInit {
     }, 500);
   }
 
-  getResume() {
-    
-  }
+  getResume() {}
 }

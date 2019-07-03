@@ -49,6 +49,7 @@
     "@nguniversal/module-map-ngfactory-loader": "^7.1.1",
     "@nrwl/angular": "8.2.0",
     "core-js": "^2.5.4",
+    "hammerjs": "^2.0.8",
     "ngx-swiper-wrapper": "^8.0.0",
     "reflect-metadata": "^0.1.12",
     "rxjs": "~6.4.0",

@@ -1,14 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { Observable } from 'rxjs';
+import { from } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 import { pmSlideNav } from '../../shared/pm-animation';
 import { PmSkill, PmSkills } from '../../shared/pm-interface';
 import { PmSkillComponent } from '../pm-skill/pm-skill.component';
 
 @Component({
-  selector: 'app-pm-skills',
+  selector: 'pm-skills',
   templateUrl: './pm-skills.component.html',
   styleUrls: ['./pm-skills.component.scss'],
   animations: [pmSlideNav],
@@ -19,13 +20,13 @@ export class PmSkillsComponent implements OnInit {
   coding: Array<PmSkill>;
   frameworks: Array<PmSkill>;
   skills: Array<PmSkills> = [];
-  tempArray: Array<any> = []
+  tempArray: Array<any> = [];
 
-  constructor(private dialog: MatDialog, private http: HttpClient) { }
+  constructor(private dialog: MatDialog, private http: HttpClient) {}
 
   ngOnInit() {
-    this.http.get('./assets/data/pm-skills.json')
-      .subscribe(data => {
+    this.http.get('./assets/data/pm-skills.json').subscribe(
+      data => {
         this.tempArray.push(data);
         this.skills = this.tempArray[0];
       },
@@ -34,12 +35,14 @@ export class PmSkillsComponent implements OnInit {
         this.getList('languages');
         this.getList('frameworks');
         this.getList('software');
-      });
+      }
+    );
   }
 
   getList(category: string) {
-    Observable.from(this.skills).filter(res => res.category === category).subscribe(
-      skills => {
+    from(this.skills)
+      .pipe(filter(res => res.category === category))
+      .subscribe(skills => {
         if (category === 'languages') {
           this.coding = skills.list;
         } else if (category === 'frameworks') {
@@ -47,11 +50,11 @@ export class PmSkillsComponent implements OnInit {
         } else if (category === 'software') {
           this.apps = skills.list;
         }
-      })
+      });
   }
 
   skillDets(skill: PmSkill) {
-    let dets = this.dialog.open(PmSkillComponent, {
+    const dets = this.dialog.open(PmSkillComponent, {
       role: 'dialog'
     });
     dets.componentInstance.skill = skill;

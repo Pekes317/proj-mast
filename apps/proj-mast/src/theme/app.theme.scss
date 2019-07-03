@@ -10,26 +10,28 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue.
 $pm-primary: mat-palette($mat-green, A700);
-$pm-accent:  mat-palette($mat-grey, 500, 900, 300);
+$pm-accent: mat-palette($mat-grey, 500, 900, 300);
 
 // The warn palette is optional (defaults to red).
-$pm-warn:    mat-palette($mat-deep-orange, 900);
+$pm-warn: mat-palette($mat-deep-orange, 900);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $pm-theme: mat-light-theme($pm-primary, $pm-accent, $pm-warn);
 
 $dark-mode: dk-mode(false);
+
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($pm-theme);
 
+// Dark Theme
+$dk-pm-primary: mat-palette($mat-green, A700);
+$dk-pm-accent: mat-palette($mat-blue-grey, 400, 700, 200);
+$dk-pm-warn: mat-palette($mat-deep-orange);
+
+$dark-theme: mat-dark-theme($dk-pm-primary, $dk-pm-accent, $dk-pm-warn);
+
 .pm-dark {
-  $dk-pm-primary: mat-palette($mat-green, A700) !global;
-  $dk-pm-accent:  mat-palette($mat-blue-grey, 400, 700, 200) !global;
-  $dk-pm-warn:    mat-palette($mat-deep-orange) !global;
-
-  $dark-theme: mat-dark-theme($dk-pm-primary, $dk-pm-accent, $dk-pm-warn);
-
   @include angular-material-theme($dark-theme);
 }
