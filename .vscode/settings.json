@@ -1,3 +1,12 @@
 {
-	"typescript.check.workspaceVersion": false,
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#5fd8ef",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#eb34ce",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "statusBar.background": "#31cdea",
+        "statusBarItem.hoverBackground": "#15b5d3",
+        "statusBar.foreground": "#15202b"
+    }
 }

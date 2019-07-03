@@ -1,22 +1,23 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "module": "commonjs",
+    "rootDir": ".",
+    "sourceMap": true,
     "declaration": false,
-    "noImplicitAny": false,
-    "removeComments": true,
-    "noLib": false,
+    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es6",
-    "sourceMap": true,
-    "allowJs": true,
-    "outDir": "./dist"
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@proj-mast/api-interface": ["libs/api-interface/src/index.ts"]
+    }
   },
-  "include": [
-    "server/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "server/**/*.spec.ts"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

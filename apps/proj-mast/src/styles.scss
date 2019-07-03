@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+@import './theme/app.theme';
+@import './theme/app.foundation';
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+body {
+  font-family: 'Roboto', sans-serif;
+  .load {
+    margin: 8px;
+  }
+}
+
+.mat-slide-toggle-label {
+  flex-basis: auto !important; //ie-fix
+}
+
+.swiper {
+  .swiper-container {
+    .swiper-pagination {
+      .swiper-pagination-handle {
+        .swiper-pagination-bullet-active {
+          background: mat-color($pm-primary);
+          opacity: 1;
+        }
+
+        .swiper-pagination-bullet {
+          &.swiper-pagination-bullet-first,
+          &.swiper-pagination-bullet-last {
+            border: none;
+            padding: 1px;
+          }
+        }
+      }
+    }
+
+    .swiper-button-next {
+      background-image: none;
+      right: 0;
+
+      &:after {
+        color: mat-color($pm-primary);
+        content: 'chevron_right';
+        font-family: 'Material Icons';
+        font-size: 2.5rem;
+        position: relative;
+      }
+    }
+
+    .swiper-button-prev {
+      background-image: none;
+      left: 0;
+
+      &:after {
+        color: mat-color($pm-primary);
+        content: 'chevron_left';
+        font-family: 'Material Icons';
+        font-size: 2.5rem;
+        left: -10px;
+        position: relative;
+      }
+    }
+  }
+}
