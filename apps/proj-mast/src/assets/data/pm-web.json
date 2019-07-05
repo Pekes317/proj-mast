@@ -1,4 +1,5 @@
-[{
+[
+  {
     "title": "EBC Hybrid Mobile App",
     "pic": "assets/web/ebc-app.png",
     "desc": "<p>Cool</p>",
@@ -9,7 +10,6 @@
     "pic": "assets/web/ebc-web.png",
     "desc": "",
     "url": "https://github.com/Pekes317/ebc-back"
-
   },
   {
     "title": "Project Mast Site",
