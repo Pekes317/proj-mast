@@ -1,13 +1,12 @@
-@import '../../../theme/app.mixins',
-'../../../theme/app.theme';
+@import '../../../theme/app.mixins', '../../../theme/app.theme';
 
 .graphic {
+  @include pm-bg-card;
   overflow: hidden;
   position: relative;
-  width: 80%;
-  @include pm-bg-card;
+  width: $pmWidth;
 
-   :host-context(.pm-dark) & {
+  :host-context(.pm-dark) & {
     color: #fff;
   }
 
@@ -18,19 +17,19 @@
     &:active {
       cursor: grabbing;
     }
-    
+
     figure {
       max-width: 25vw;
       text-align: center;
-      
+
       figcaption {
-        padding-top: .5rem;
+        padding-top: 0.5rem;
       }
     }
-    
+
     .desc {
       flex: 1 1 auto;
-      margin-left: .75rem;
+      margin-left: 0.75rem;
     }
   }
 }

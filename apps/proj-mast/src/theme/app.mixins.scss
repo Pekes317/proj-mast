@@ -1,3 +1,5 @@
+$pmWidth: 80vw;
+
 @mixin nav-btns($top: 0) {
   .active {
     color: mat-color($pm-primary) !important;
@@ -9,7 +11,7 @@
     display: inline-block;
     position: relative;
     width: 100%;
-    
+
     &:hover {
       mat-icon {
         color: transparent;
@@ -31,16 +33,16 @@
   }
 }
 
-@mixin pm-padding($vertical: .75rem, $horizontal: .75rem) {
+@mixin pm-padding($vertical: 0.75rem, $horizontal: 0.75rem) {
   padding: $vertical $horizontal;
 }
 
 @mixin pm-bg-card {
-  background-color: transparentize(#fefefe, .3);
+  background-color: transparentize(#fefefe, 0.3);
 
-	:host-context(.pm-dark) & { 
-			background-color: transparentize(#424242, .3);
-	}
+  :host-context(.pm-dark) & {
+    background-color: transparentize(#424242, 0.3);
+  }
 }
 
 @mixin pm-text {
@@ -70,7 +72,7 @@
     margin: auto;
     position: absolute;
     transform: scaleX(0);
-    transition: transform .3s;
+    transition: transform 0.3s;
     width: 100%;
   }
 }

@@ -1,19 +1,19 @@
 @import '../../../theme/app.mixins';
 
 .pm-proj-base {
-  width: 80%;
   @include pm-bg-card;
+  width: $pmWidth;
 
   .body-text {
+    padding: 1rem;
 
     p {
       line-height: 1.25rem;
-      margin-bottom: .75rem;
+      margin-bottom: 0.75rem;
     }
   }
-  
+
   .old-site {
-  
     a {
       border: 1px currentColor solid;
     }

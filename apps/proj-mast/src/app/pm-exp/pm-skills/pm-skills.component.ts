@@ -4,16 +4,13 @@ import { MatDialog } from '@angular/material';
 import { from } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
-import { pmSlideNav } from '../../shared/pm-animation';
 import { PmSkill, PmSkills } from '../../shared/pm-interface';
 import { PmSkillComponent } from '../pm-skill/pm-skill.component';
 
 @Component({
   selector: 'pm-skills',
   templateUrl: './pm-skills.component.html',
-  styleUrls: ['./pm-skills.component.scss'],
-  animations: [pmSlideNav],
-  host: { '[@slideNav]': '' }
+  styleUrls: ['./pm-skills.component.scss']
 })
 export class PmSkillsComponent implements OnInit {
   apps: Array<PmSkill>;

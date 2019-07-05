@@ -1,13 +1,14 @@
 <mat-card class="jobs">
   <mat-card-title>Experience</mat-card-title>
   <mat-card-content class="pm-achieve">
-    <mat-list [@fadeInOut]="fadeIn">
-      <mat-list-item *ngFor="let achieve of achieves"><span class="achieve-text">{{ achieve }}</span></mat-list-item>
+    <mat-list>
+      <mat-list-item *ngFor="let achieve of achieves"><span class="achieve-text">{{ achieve }}</span>
+      </mat-list-item>
     </mat-list>
   </mat-card-content>
   <mat-card-footer class="pm-resume">
     <a mat-button color="primary" download target="_blank" href="assets/resume.pdf">Resum&#233;
-          <mat-icon>file_download</mat-icon>
-        </a>
+      <mat-icon>file_download</mat-icon>
+    </a>
   </mat-card-footer>
 </mat-card>

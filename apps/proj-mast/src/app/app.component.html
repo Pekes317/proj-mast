@@ -3,15 +3,8 @@
     <nav fxLayout="row" fxLayoutAlign="space-between start" fxLayoutAlign.xs="center">
       <pm-logo fxFlex="33vw" fxFlex.xs=""></pm-logo>
       <div fxLayout="row" fxLayoutAlign="center center" fxHide="false" fxHide.xs fxFlex="30vw">
-        <a
-          *ngFor="let item of navItems"
-          [name]="item.name"
-          class="nav-btns btns"
-          [routerLink]="item.path"
-          mat-button
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="item.match"
-        >
+        <a *ngFor="let item of navItems" [name]="item.name" class="nav-btns btns" [routerLink]="item.path" mat-button
+          routerLinkActive="active" [routerLinkActiveOptions]="item.match">
           <mat-icon>{{ item.icon }}</mat-icon>
         </a>
       </div>
@@ -24,17 +17,8 @@
     </nav>
     <mat-sidenav #mobile position="end">
       <mat-nav-list class="mobile-menu">
-        <a
-          #btns
-          *ngFor="let item of navItems"
-          [name]="item.name"
-          class="nav-btns"
-          [routerLink]="item.path"
-          mat-list-item
-          routerLinkActive="active"
-          (click)="mobile.close()"
-          [routerLinkActiveOptions]="item.match"
-        >
+        <a #btns *ngFor="let item of navItems" [name]="item.name" class="nav-btns" [routerLink]="item.path"
+          mat-list-item routerLinkActive="active" (click)="mobile.close()" [routerLinkActiveOptions]="item.match">
           <mat-icon>{{ item.icon }}</mat-icon>
         </a>
       </mat-nav-list>
@@ -43,8 +27,8 @@
       <mat-slide-toggle [(ngModel)]="darkTheme">Dark Mode</mat-slide-toggle>
       <pm-social></pm-social>
     </div>
-    <main class="my-content">
-      <router-outlet></router-outlet>
+    <main class="my-content" [@fadeInOut]="routerTransition(outlet)">
+      <router-outlet #outlet="outlet"></router-outlet>
     </main>
   </mat-sidenav-container>
 </div>

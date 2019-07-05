@@ -3,14 +3,14 @@ import { Component, OnInit } from '@angular/core';
 import { from, of } from 'rxjs';
 import { concatMap, delay } from 'rxjs/operators';
 
-import { pmFadeInOut, pmSlideNav } from '../../shared/pm-animation';
+import { pmFadeInOut } from '../../shared/pm-animation';
 import { PmFeedback } from '../../shared/pm-interface';
 
 @Component({
   selector: 'pm-testimonial',
   templateUrl: './pm-testimonial.component.html',
   styleUrls: ['./pm-testimonial.component.scss'],
-  animations: [pmFadeInOut, pmSlideNav]
+  animations: [pmFadeInOut]
 })
 export class PmTestimonialComponent implements OnInit {
   message: PmFeedback;

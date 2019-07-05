@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-import { pmFadeInOut, pmSlideNav } from '../../shared/pm-animation';
+import { pmFadeInOut } from '../../shared/pm-animation';
 
 @Component({
   selector: 'pm-jobs',
   templateUrl: './pm-jobs.component.html',
   styleUrls: ['./pm-jobs.component.scss'],
-  animations: [pmFadeInOut, pmSlideNav],
-  host: { '[@slideNav]': '' }
+  animations: [pmFadeInOut]
 })
 export class PmJobsComponent implements OnInit {
   achieves: Array<string> = [
@@ -17,7 +16,7 @@ export class PmJobsComponent implements OnInit {
     'Became a valuable resource for Business Partners',
     'Developed into a subject matter expert within 18 months'
   ];
-  fadeIn: boolean = false;
+  fadeIn = false;
 
   constructor() {}
 

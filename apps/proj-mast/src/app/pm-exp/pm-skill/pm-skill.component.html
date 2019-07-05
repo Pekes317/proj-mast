@@ -1,5 +1,8 @@
-<h2 mat-dialog-title>{{ skill.name }}</h2>
-<div [innerHtml]="skill.context"></div>
-<mat-dialog-actions>
-  <button mat-dialog-close mat-button color="warn">Close</button>
-</mat-dialog-actions>
+<div class="skill-bar">
+  <h2 mat-dialog-title>{{ skill.name }}</h2>
+  <div [innerHtml]="skill.context"></div>
+  <mat-progress-bar mode="determinate" [value]="skill.context"></mat-progress-bar>
+  <mat-dialog-actions>
+    <button mat-dialog-close mat-button color="warn">Close</button>
+  </mat-dialog-actions>
+</div>

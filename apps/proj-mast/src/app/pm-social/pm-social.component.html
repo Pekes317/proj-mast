@@ -2,7 +2,8 @@
   <button mat-icon-button color="accent" matTooltip="email" matTooltipPosition="left" (click)="contactMe()">
     <mat-icon>email</mat-icon>
   </button>
-  <a *ngFor="let btn of socialBtns" mat-icon-button color="accent" [matTooltip]="btn.tip" target="_blank" matTooltipPosition="left" [href]="btn.link">
+  <a *ngFor="let btn of socialBtns" mat-icon-button color="accent" [matTooltip]="btn.tip" target="_blank"
+    matTooltipPosition="left" [href]="btn.link">
     <mat-icon [svgIcon]="'social:'+btn.svgIcon"></mat-icon>
   </a>
 </div>

@@ -1,48 +1,46 @@
-@import '../../../theme/app.mixins',
- '../../../theme/app.theme';
+@import '../../../theme/app.mixins', '../../../theme/app.theme';
 
 .side-nav {
-  @include pm-padding(.75rem, 0);
+  @include pm-padding(0.75rem, 0);
 }
 
 .jobs {
-  width: 80%;
   @include pm-bg-card;
-	@include pm-text;
-  
-	.pm-achieve {
-		display: flex;
-		justify-content: center;
-		@include pm-padding;
-    
-		mat-list {
+  @include pm-text;
+  width: $pmWidth;
+
+  .pm-achieve {
+    display: flex;
+    justify-content: center;
+    @include pm-padding;
+
+    mat-list {
       margin-bottom: 1rem;
-     
-		  .achieve-text {
-				@include pm-text;
-				align-items: center;
-				display: flex;
-				justify-content: flex-start;
-				
+
+      .achieve-text {
+        @include pm-text;
+        align-items: center;
+        display: flex;
+        justify-content: flex-start;
 
         &::before {
           content: '\2022';
-					font-size: 1.5rem;
-					padding-right: .75rem;				
+          font-size: 1.5rem;
+          padding-right: 0.75rem;
         }
       }
     }
   }
-  
-	.pm-resume {
-		align-content: center;
+
+  .pm-resume {
+    align-content: center;
     display: flex;
-		flex-direction: row;
+    flex-direction: row;
     justify-content: center;
-		width: 100%;
-		@include pm-padding(1.5rem);
-  
-	  a {
+    width: 100%;
+    @include pm-padding(1.5rem);
+
+    a {
       border: currentColor 1px solid;
     }
   }

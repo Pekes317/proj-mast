@@ -1,8 +1,8 @@
 @import '../../../theme/app.mixins';
 
 .feed {
-  min-width: 80%;
   @include pm-bg-card;
+  width: $pmWidth;
 
   .front {
     display: flex;

@@ -2,15 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
-import { pmSlideNav } from '../../shared/pm-animation';
 import { PmGraphicSlide } from '../../shared/pm-interface';
 
 @Component({
   selector: 'pm-graphics',
   templateUrl: './pm-graphics.component.html',
-  styleUrls: ['./pm-graphics.component.scss'],
-  animations: [pmSlideNav],
-  host: { '[@slideNav]': '' }
+  styleUrls: ['./pm-graphics.component.scss']
 })
 export class PmGraphicsComponent implements OnInit {
   configSlides: SwiperConfigInterface = {

@@ -1,42 +1,41 @@
 .skill-bar {
-	align-content: center;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	min-height: 15vw;
-	min-width: 30vw;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 30vw;
 
-	.labels {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		padding-bottom: .5rem;
+  .labels {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
 
-		.begin {
-			position: relative;
-		
-			&:before {
-				content: '|';
-				font-weight: 600;
-				position: absolute;
-				top: .8rem;
-			}
-		}
+    .begin {
+      position: relative;
 
-		.ex {
-			position: relative;
-		
-			&:after {
-				content: '|';
-				font-weight: 600;
-				position: absolute;
-				right: 0;
-				top: .8rem;
-			}
-		}
-	}
+      &:before {
+        content: '|';
+        font-weight: 600;
+        position: absolute;
+        top: 0.8rem;
+      }
+    }
 
-	mat-progress-bar {
-		height: .75rem;
-	}
+    .ex {
+      position: relative;
+
+      &:after {
+        content: '|';
+        font-weight: 600;
+        position: absolute;
+        right: 0;
+        top: 0.8rem;
+      }
+    }
+  }
+
+  mat-progress-bar {
+    height: 0.75rem;
+  }
 }

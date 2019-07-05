@@ -1,11 +1,13 @@
 import { AfterViewInit, Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { MatListItem } from '@angular/material';
 import { Title } from '@angular/platform-browser';
-import { Router, ActivationEnd } from '@angular/router';
+import { ActivationEnd, Router, RouterOutlet } from '@angular/router';
+import { pmFadeInOut } from './shared/pm-animation';
 
 import { PmNav } from './shared/pm-interface';
 
 @Component({
+  animations: [pmFadeInOut],
   selector: 'pm-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
@@ -52,5 +54,9 @@ export class AppComponent implements AfterViewInit, OnInit {
       const inner: HTMLDivElement = el['_element'].nativeElement['firstChild'];
       inner.style.justifyContent = 'center';
     });
+  }
+
+  routerTransition(outlet: RouterOutlet) {
+    return outlet.isActivated ? outlet.activatedRoute : true;
   }
 }
