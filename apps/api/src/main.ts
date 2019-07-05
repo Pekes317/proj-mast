@@ -1,20 +1,31 @@
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
- **/
-
+import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
+import { ExpressAdapter } from '@nestjs/platform-express';
+import { createWindow } from 'domino';
+import { runWith } from 'firebase-functions';
 
 import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
 
-async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+const win = createWindow();
+const express = new ExpressAdapter();
+
+global['window'] = win;
+global['document'] = win.document;
+
+const bootstrap = async () => {
+  const app = await NestFactory.create(AppModule, express);
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
-  const port = process.env.port || 3333;
-  await app.listen(port, () => {
-    console.log('Listening at http://localhost:' + port + '/' + globalPrefix);
-  });
-}
+  if (environment.production) {
+    app.init();
+  } else {
+    const port = process.env.port || 3333;
+    await app.listen(port, () => {
+      Logger.log('Listening at http://localhost:' + port + '/' + globalPrefix);
+    });
+  }
+};
 
 bootstrap();
+export const server = runWith({}).https.onRequest(express.getInstance());
