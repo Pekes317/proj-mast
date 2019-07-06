@@ -25,12 +25,13 @@
       align-items: flex-start;
       display: inline-flex;
       flex: 1 1 auto;
-      flex-direction: column;
-      justify-content: space-between;
-      margin-left: 0.75rem;
+      margin-left: 1rem;
 
       div:nth-child(2) {
         align-self: center;
+        display: inline-flex;
+        justify-content: center;
+        width: 100%;
       }
 
       a {
