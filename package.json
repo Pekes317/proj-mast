@@ -9,6 +9,8 @@
     "start:prod": "firebase serve",
     "start:api": "ng serve api",
     "build": "npm run build:app && npm run build:api && npm run build:ssr",
+    "prebuild:prod": "node tools/pre-build",
+    "postbuild:prod": "node tools/post-build",
     "build:prod": "npm run build:app -- --configuration=production && npm run build:api -- --configuration=production && npm run build:ssr -- --configuration=production",
     "build:app": "ng build",
     "build:api": "ng build api",
