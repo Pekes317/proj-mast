@@ -2,6 +2,8 @@ import { Injectable, Logger } from '@nestjs/common';
 import { Message } from '@proj-mast/api-interface';
 import { firestore } from 'firebase-admin';
 
+// import { firestore } from '../util/firebase';
+
 @Injectable()
 export class AppService {
   getData(): Message {
@@ -10,13 +12,14 @@ export class AppService {
 
   async getWebData() {
     try {
-      const web = await firestore()
+      const docs = await firestore()
         .collection('web')
         .get();
+      Logger.log(docs);
 
-      return web.docs;
+      return [];
     } catch (error) {
-      Logger.error(error);
+      Logger.error(error.message);
 
       throw error;
     }

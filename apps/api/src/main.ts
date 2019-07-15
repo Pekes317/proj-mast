@@ -1,19 +1,18 @@
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { ExpressAdapter } from '@nestjs/platform-express';
-import { createWindow } from 'domino';
+import * as admin from 'firebase-admin';
 import { runWith } from 'firebase-functions';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-const win = createWindow();
 const express = new ExpressAdapter();
-
-global['window'] = win;
-global['document'] = win.document;
+const firebase = JSON.parse(process.env.FIREBASE_CONFIG);
+firebase.credential = admin.credential.cert(require('./assets/projectmast.json'));
 
 const bootstrap = async () => {
+  admin.initializeApp(firebase);
   const app = await NestFactory.create(AppModule, express);
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
