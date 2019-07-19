@@ -1,5 +1,5 @@
 import { Injectable, Logger, HttpStatus } from '@nestjs/common';
-import { Collections, Message } from '@proj-mast/api-interface';
+import { Collections, Message, Skills } from '@proj-mast/api-interface';
 import { firestore } from 'firebase-admin';
 
 @Injectable()
@@ -17,7 +17,7 @@ export class AppService {
 
       return docs;
     } else {
-      const message = `Collect ${name} doesn't exist!`;
+      const message = `Collection ${name} doesn't exist!`;
       Logger.error(message);
 
       throw {
@@ -28,6 +28,35 @@ export class AppService {
   }
 
   public async getSkillCollection(skillType: string) {
+    const isValidType = Object.values(Skills).includes(skillType);
+    if (isValidType) {
+      const docs = await this.getSkillDocuments(skillType);
+
+      return docs;
+    } else {
+      const message = `Skill Set ${skillType} doesn't exits`;
+      Logger.error(message);
+
+      throw {
+        error: message,
+        status: HttpStatus.NOT_FOUND,
+      };
+    }
+  }
+
+  private async getDocuments(name: string) {
+    try {
+      const collection = await this.db.collection(name).get();
+
+      return collection.docs.map(doc => doc.data());
+    } catch (error) {
+      Logger.error(error.message);
+
+      throw { error: error.message };
+    }
+  }
+
+  private async getSkillDocuments(skillType: string) {
     try {
       const collection = await this.db
         .collection(Collections.skills)
@@ -39,18 +68,6 @@ export class AppService {
         .get();
 
       return list.docs.map(doc => doc.data());
-    } catch (error) {
-      Logger.error(error.message);
-
-      throw { error: error.message };
-    }
-  }
-
-  private async getDocuments(name: string) {
-    try {
-      const collection = await this.db.collection(name).get();
-
-      return collection.docs.map(doc => doc.data());
     } catch (error) {
       Logger.error(error.message);
 
