@@ -1,8 +1,9 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Collections } from '@proj-mast/api-interface';
 import { from, of } from 'rxjs';
 import { concatMap, delay } from 'rxjs/operators';
 
+import { FirestoreService } from '../../shared/firestore.service';
 import { pmFadeInOut } from '../../shared/pm-animation';
 import { PmFeedback } from '../../shared/pm-interface';
 
@@ -10,17 +11,17 @@ import { PmFeedback } from '../../shared/pm-interface';
   selector: 'pm-testimonial',
   templateUrl: './pm-testimonial.component.html',
   styleUrls: ['./pm-testimonial.component.scss'],
-  animations: [pmFadeInOut]
+  animations: [pmFadeInOut],
 })
 export class PmTestimonialComponent implements OnInit {
   message: PmFeedback;
   messages: Array<PmFeedback> = [];
   newMess: Array<any> = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private firestore: FirestoreService) {}
 
   ngOnInit() {
-    this.http.get('./assets/data/pm-testimonial.data.json').subscribe(
+    this.firestore.getCollection(Collections.testimonials).subscribe(
       data => {
         this.newMess.push(data);
         this.messages = this.newMess[0];
@@ -33,7 +34,7 @@ export class PmTestimonialComponent implements OnInit {
         setTimeout(() => {
           this.getFeed();
         }, 5000);
-      }
+      },
     );
   }
 
@@ -45,7 +46,7 @@ export class PmTestimonialComponent implements OnInit {
           this.message = data;
         },
         err => console.log(err),
-        () => this.getFeed()
+        () => this.getFeed(),
       );
   }
 }
