@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Collections } from '@proj-mast/api-interface';
+import { Collections, FeedbackCollection } from '@proj-mast/api-interface';
 import { from, of } from 'rxjs';
 import { concatMap, delay } from 'rxjs/operators';
 
 import { FirestoreService } from '../../shared/firestore.service';
 import { pmFadeInOut } from '../../shared/pm-animation';
-import { PmFeedback } from '../../shared/pm-interface';
 
 @Component({
   selector: 'pm-testimonial',
@@ -14,23 +13,19 @@ import { PmFeedback } from '../../shared/pm-interface';
   animations: [pmFadeInOut],
 })
 export class PmTestimonialComponent implements OnInit {
-  message: PmFeedback;
-  messages: Array<PmFeedback> = [];
-  newMess: Array<any> = [];
+  message: FeedbackCollection;
+  messages: Array<FeedbackCollection> = [];
 
   constructor(private firestore: FirestoreService) {}
 
   ngOnInit() {
     this.firestore.getCollection(Collections.testimonials).subscribe(
       data => {
-        this.newMess.push(data);
-        this.messages = this.newMess[0];
+        this.messages = Array.isArray(data) ? (data as FeedbackCollection[]) : [data as FeedbackCollection];
+        this.message = this.messages[this.messages.length - 1];
       },
-      err => console.log(err),
+      err => console.error(err),
       () => {
-        this.message = this.messages.find(mess => {
-          return mess.id === 6;
-        });
         setTimeout(() => {
           this.getFeed();
         }, 5000);

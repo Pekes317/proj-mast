@@ -1,5 +1,5 @@
 import { Injectable, Logger, HttpStatus } from '@nestjs/common';
-import { Collections, Message, Skills } from '@proj-mast/api-interface';
+import { Collections, Documents, Message, Skills } from '@proj-mast/api-interface';
 import { firestore } from 'firebase-admin';
 
 @Injectable()
@@ -27,6 +27,23 @@ export class AppService {
     }
   }
 
+  public async getOtherDocument(name: string) {
+    const isExists = Object.values(Documents).includes(name);
+    if (isExists) {
+      const doc = await this.getDocument(name);
+
+      return doc;
+    } else {
+      const message = `Document ${name} doesn't exist!`;
+      Logger.error(message);
+
+      throw {
+        error: message,
+        status: HttpStatus.NOT_FOUND,
+      };
+    }
+  }
+
   public async getSkillCollection(skillType: string) {
     const isValidType = Object.values(Skills).includes(skillType);
     if (isValidType) {
@@ -41,6 +58,21 @@ export class AppService {
         error: message,
         status: HttpStatus.NOT_FOUND,
       };
+    }
+  }
+
+  private async getDocument(id: string) {
+    try {
+      const document = await this.db
+        .collection('other')
+        .doc(id)
+        .get();
+
+      return document.data();
+    } catch (error) {
+      Logger.error(error.message);
+
+      throw { error: error.message };
     }
   }
 

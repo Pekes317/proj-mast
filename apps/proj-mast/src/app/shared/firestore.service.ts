@@ -1,6 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Collections, PmCollection, Skills, SkillsCollection, SkillCollection } from '@proj-mast/api-interface';
+import {
+  Collections,
+  Documents,
+  PmCollection,
+  PmDocument,
+  Skills,
+  SkillsCollection,
+  SkillCollection,
+} from '@proj-mast/api-interface';
 import { Observable, Subject } from 'rxjs';
 
 @Injectable({
@@ -8,6 +16,7 @@ import { Observable, Subject } from 'rxjs';
 })
 export class FirestoreService {
   private collectEnd = '/api/collections';
+  private docuEnd = '/api/documents';
   private skillEnd = '/api/skills';
   public skillSubject: Subject<SkillsCollection> = new Subject();
 
@@ -23,11 +32,15 @@ export class FirestoreService {
     });
   }
 
-  public getCollection(collection: Collections): Observable<PmCollection> {
+  public getCollection(collection: Collections) {
     return this.http.get(`${this.collectEnd}/${collection}`) as Observable<PmCollection>;
   }
 
-  private getSkills(skill: string): Observable<SkillCollection> {
+  public getDocument(doc: Documents) {
+    return this.http.get(`${this.docuEnd}/${doc}`) as Observable<PmDocument>;
+  }
+
+  private getSkills(skill: string) {
     return this.http.get(`${this.skillEnd}/${skill}`) as Observable<SkillCollection>;
   }
 }

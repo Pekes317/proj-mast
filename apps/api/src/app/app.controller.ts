@@ -21,6 +21,14 @@ export class AppController {
       .catch(err => res.status(err.status || HttpStatus.BAD_REQUEST).send(err));
   }
 
+  @Get('documents/:title')
+  getDocument(@Res() res: Response, @Param('title') title: string) {
+    this.appService
+      .getOtherDocument(title)
+      .then(data => res.status(HttpStatus.OK).send(data))
+      .catch(err => res.status(err.status || HttpStatus.BAD_REQUEST).send(err));
+  }
+
   @Get('skills/:category')
   getSkills(@Res() res: Response, @Param('category') category: string) {
     this.appService

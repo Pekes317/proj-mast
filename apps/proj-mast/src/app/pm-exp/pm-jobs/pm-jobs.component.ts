@@ -1,26 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import { Documents } from '@proj-mast/api-interface';
+import { take } from 'rxjs/operators';
 
+import { FirestoreService } from '../../shared/firestore.service';
 import { pmFadeInOut } from '../../shared/pm-animation';
 
 @Component({
   selector: 'pm-jobs',
   templateUrl: './pm-jobs.component.html',
   styleUrls: ['./pm-jobs.component.scss'],
-  animations: [pmFadeInOut]
+  animations: [pmFadeInOut],
 })
 export class PmJobsComponent implements OnInit {
-  achieves: Array<string> = [
-    'Elected to lead daily team meeting',
-    'Became lead email template creator with mobile in mind',
-    'Played a key part in several site migrations',
-    'Became a valuable resource for Business Partners',
-    'Developed into a subject matter expert within 18 months'
-  ];
+  achieves: string[] = [];
   fadeIn = false;
 
-  constructor() {}
+  constructor(private firestore: FirestoreService) {}
 
   ngOnInit() {
+    this.firestore
+      .getDocument(Documents.achievements)
+      .pipe(take(1))
+      .subscribe(doc => (this.achieves = doc.list));
     setTimeout(() => {
       this.fadeIn = true;
     }, 500);

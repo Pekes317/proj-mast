@@ -1,5 +1,9 @@
 import { Observable } from 'rxjs';
 
+export interface AchievementDoc {
+  list: string[];
+}
+
 export interface FeedbackCollection {
   id: number;
   message: string;
@@ -29,3 +33,5 @@ export interface WebCollection {
 }
 
 export type PmCollection = FeedbackCollection | GraphicCollection | WebCollection;
+
+export type PmDocument = AchievementDoc;
