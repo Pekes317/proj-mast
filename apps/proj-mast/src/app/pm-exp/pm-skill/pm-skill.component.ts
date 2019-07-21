@@ -1,21 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material';
-
-import { PmSkill } from '../../shared/pm-interface';
+import { SkillCollection } from '@proj-mast/api-interface';
 
 @Component({
   selector: 'pm-skill',
   templateUrl: './pm-skill.component.html',
-  styleUrls: ['./pm-skill.component.scss']
+  styleUrls: ['./pm-skill.component.scss'],
 })
 export class PmSkillComponent implements OnInit {
   level = 0;
-  skill: PmSkill = {
+  skill: SkillCollection = {
     name: '',
-    context: ''
+    context: '',
   };
 
-  constructor(private dialogRef: MatDialogRef<PmSkillComponent>) {}
+  constructor() {}
 
   ngOnInit() {}
 }
