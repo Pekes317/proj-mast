@@ -1,59 +1,53 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { from } from 'rxjs';
-import { filter } from 'rxjs/operators';
+import { Skills, SkillCollection, SkillsCollection } from '@proj-mast/api-interface';
 
-import { PmSkill, PmSkills } from '../../shared/pm-interface';
+import { FirestoreService } from '../../shared/firestore.service';
 import { PmSkillComponent } from '../pm-skill/pm-skill.component';
 
 @Component({
   selector: 'pm-skills',
   templateUrl: './pm-skills.component.html',
-  styleUrls: ['./pm-skills.component.scss']
+  styleUrls: ['./pm-skills.component.scss'],
 })
 export class PmSkillsComponent implements OnInit {
-  apps: Array<PmSkill>;
-  coding: Array<PmSkill>;
-  frameworks: Array<PmSkill>;
-  skills: Array<PmSkills> = [];
-  tempArray: Array<any> = [];
+  apps: SkillCollection[] = [];
+  coding: SkillCollection[] = [];
+  frameworks: SkillCollection[] = [];
 
-  constructor(private dialog: MatDialog, private http: HttpClient) {}
+  constructor(private dialog: MatDialog, private firestore: FirestoreService) {}
 
   ngOnInit() {
-    this.http.get('./assets/data/pm-skills.json').subscribe(
-      data => {
-        this.tempArray.push(data);
-        this.skills = this.tempArray[0];
-      },
-      err => console.log(err),
-      () => {
-        this.getList('languages');
-        this.getList('frameworks');
-        this.getList('software');
-      }
-    );
+    this.firestore.skillSubject.subscribe(skilSet => this.getList(skilSet));
+    this.firestore.getAllSkills();
   }
 
-  getList(category: string) {
-    from(this.skills)
-      .pipe(filter(res => res.category === category))
-      .subscribe(skills => {
-        if (category === 'languages') {
-          this.coding = skills.list;
-        } else if (category === 'frameworks') {
-          this.frameworks = skills.list;
-        } else if (category === 'software') {
-          this.apps = skills.list;
-        }
-      });
-  }
-
-  skillDets(skill: PmSkill) {
+  public skillDets(skill: SkillCollection) {
     const dets = this.dialog.open(PmSkillComponent, {
-      role: 'dialog'
+      role: 'dialog',
     });
     dets.componentInstance.skill = skill;
+  }
+
+  private getList(set: SkillsCollection) {
+    set.list.subscribe(list => {
+      this.setCategory(set.category as Skills, list);
+    });
+  }
+
+  private setCategory(category: Skills, list: SkillCollection) {
+    switch (category) {
+      case Skills.frameworks:
+        this.frameworks = Array.isArray(list) ? list : [list];
+        break;
+
+      case Skills.language:
+        this.coding = Array.isArray(list) ? list : [list];
+        break;
+
+      case Skills.software:
+        this.apps = Array.isArray(list) ? list : [list];
+        break;
+    }
   }
 }

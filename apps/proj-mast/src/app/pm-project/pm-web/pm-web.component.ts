@@ -1,13 +1,13 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Collections, WebCollection } from '@proj-mast/api-interface';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
-import { PmWebSlide } from '../../shared/pm-interface';
+import { FirestoreService } from '../../shared/firestore.service';
 
 @Component({
   selector: 'pm-web',
   templateUrl: './pm-web.component.html',
-  styleUrls: ['./pm-web.component.scss']
+  styleUrls: ['./pm-web.component.scss'],
 })
 export class PmWebComponent implements OnInit {
   configSlides: SwiperConfigInterface = {
@@ -15,27 +15,20 @@ export class PmWebComponent implements OnInit {
     keyboard: true,
     navigation: {
       nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
+      prevEl: '.swiper-button-prev',
     },
     pagination: {
       el: '.swiper-pagination',
-      clickable: true
-    }
+      clickable: true,
+    },
   };
-  newSlide: Array<any> = [];
-  webSlides: Array<PmWebSlide> = [];
+  webSlides: Array<WebCollection> = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private firestore: FirestoreService) {}
 
   ngOnInit() {
-    this.http.get('./assets/data/pm-web.json').subscribe(
-      data => {
-        this.newSlide.push(data);
-      },
-      err => console.log(err),
-      () => {
-        this.webSlides = this.newSlide[0];
-      }
-    );
+    this.firestore.getCollection(Collections.web).subscribe(web => {
+      this.webSlides = Array.isArray(web) ? web : [web as WebCollection];
+    });
   }
 }

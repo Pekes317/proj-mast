@@ -1,13 +1,13 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Collections, GraphicCollection } from '@proj-mast/api-interface';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
-import { PmGraphicSlide } from '../../shared/pm-interface';
+import { FirestoreService } from '../../shared/firestore.service';
 
 @Component({
   selector: 'pm-graphics',
   templateUrl: './pm-graphics.component.html',
-  styleUrls: ['./pm-graphics.component.scss']
+  styleUrls: ['./pm-graphics.component.scss'],
 })
 export class PmGraphicsComponent implements OnInit {
   configSlides: SwiperConfigInterface = {
@@ -15,27 +15,20 @@ export class PmGraphicsComponent implements OnInit {
     keyboard: true,
     navigation: {
       nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
+      prevEl: '.swiper-button-prev',
     },
     pagination: {
       el: '.swiper-pagination',
-      clickable: true
-    }
+      clickable: true,
+    },
   };
-  newSlide: Array<any> = [];
-  graphicSlides: Array<PmGraphicSlide> = [];
+  graphicSlides: Array<GraphicCollection> = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private firestore: FirestoreService) {}
 
   ngOnInit() {
-    this.http.get('./assets/data/pm-graphic.json').subscribe(
-      data => {
-        this.newSlide.push(data);
-      },
-      err => console.log(err),
-      () => {
-        this.graphicSlides = this.newSlide[0];
-      }
-    );
+    this.firestore.getCollection(Collections.graphics).subscribe(graphic => {
+      this.graphicSlides = Array.isArray(graphic) ? graphic : [graphic as GraphicCollection];
+    });
   }
 }

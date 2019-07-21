@@ -1,5 +1,5 @@
 export enum Skills {
   frameworks = 'frameworks',
-  language = 'language',
+  language = 'languages',
   software = 'software',
 }
