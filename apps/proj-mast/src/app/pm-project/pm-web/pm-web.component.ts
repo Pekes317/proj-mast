@@ -3,8 +3,10 @@ import { Collections, WebCollection } from '@proj-mast/api-interface';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
 import { FirestoreService } from '../../shared/firestore.service';
+import { pmFadeInOut } from '../../shared/pm-animation';
 
 @Component({
+  animations: [pmFadeInOut],
   selector: 'pm-web',
   templateUrl: './pm-web.component.html',
   styleUrls: ['./pm-web.component.scss'],

@@ -1,14 +1,19 @@
 <mat-card class="graphic">
   <mat-card-title>Graphic Design Work</mat-card-title>
-  <swiper [config]="configSlides">
-    <div class="slide" *ngFor="let slide of graphicSlides">
-      <figure>
-        <img [src]="slide.pic" [alt]="slide.title">
-        <figcaption>{{ slide.title }}</figcaption>
-      </figure>
-      <div class="desc">
-        <div [innerHtml]="slide.desc"></div>
+  <swiper [config]="configSlides" [@fadeInOut]="graphicSlides.length">
+    <ng-container *ngIf="graphicSlides.length > 0; else loading">
+      <div class="slide" *ngFor="let slide of graphicSlides">
+        <figure>
+          <img [src]="slide.pic" [alt]="slide.title">
+          <figcaption>{{ slide.title }}</figcaption>
+        </figure>
+        <div class="desc">
+          <div [innerHtml]="slide.desc"></div>
+        </div>
       </div>
-    </div>
+    </ng-container>
+    <ng-template #loading>
+      <mat-spinner></mat-spinner>
+    </ng-template>
   </swiper>
 </mat-card>

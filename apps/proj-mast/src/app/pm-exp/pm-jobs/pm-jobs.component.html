@@ -1,9 +1,14 @@
 <mat-card class="jobs">
   <mat-card-title>Experience</mat-card-title>
   <mat-card-content class="pm-achieve">
-    <mat-list>
-      <mat-list-item *ngFor="let achieve of achieves"><span class="achieve-text">{{ achieve }}</span>
-      </mat-list-item>
+    <mat-list [@fadeInOut]="achieves.length">
+      <ng-container *ngIf="achieves.length > 0; else loading">
+        <mat-list-item *ngFor="let achieve of achieves"><span class="achieve-text">{{ achieve }}</span>
+        </mat-list-item>
+      </ng-container>
+      <ng-template #loading>
+        <mat-spinner></mat-spinner>
+      </ng-template>
     </mat-list>
   </mat-card-content>
   <mat-card-footer class="pm-resume">

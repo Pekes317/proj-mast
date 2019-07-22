@@ -1,8 +1,8 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material';
-import { map } from 'rxjs/operators';
+import { MatDialogRef, MatSnackBar } from '@angular/material';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'pm-contact',
@@ -16,7 +16,7 @@ export class PmContactComponent implements OnInit {
   sender: FormControl = new FormControl('', Validators.required);
   url = '/api/emails';
 
-  constructor(private http: HttpClient, private snack: MatSnackBar) {}
+  constructor(private diag: MatDialogRef<PmContactComponent>, private http: HttpClient, private snack: MatSnackBar) {}
 
   ngOnInit() {
     this.contactForm = new FormGroup({
@@ -26,17 +26,17 @@ export class PmContactComponent implements OnInit {
     });
   }
 
-  getMessage(text: string) {
+  public getMessage(text: string) {
     this.snack.open(text, 'Okay', {
       duration: 5000,
     });
     this.contactForm.reset();
   }
 
-  sendEmail() {
+  public sendEmail() {
     const post = this.http
       .post(this.url, this.contactForm.value)
-      .pipe(map(res => res.toString()))
+      .pipe(tap(() => this.closeAfter()))
       .subscribe(
         res => {
           console.log(res);
@@ -44,11 +44,15 @@ export class PmContactComponent implements OnInit {
         },
         err => {
           console.error(err);
-          this.getMessage('Sorry,the message failed to Send.');
+          this.getMessage('Sorry, the message failed to Send.');
         },
         () => {
           post.unsubscribe();
         },
       );
+  }
+
+  private closeAfter() {
+    this.diag.close();
   }
 }

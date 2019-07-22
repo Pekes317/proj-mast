@@ -15,7 +15,6 @@ export class EmailService {
 
       return sent;
     } catch (error) {
-      console.error(error);
       Logger.error(error.message);
 
       throw error;
@@ -26,10 +25,11 @@ export class EmailService {
     const message = `Name: ${EmailData.sender}\nEmail: ${EmailData.email}\nMessage: ${EmailData.message}`;
     const mail: SendMailOptions = {
       from: { name: EmailData.sender, address: EmailData.email },
-      to: { name: 'Peter Mast', address: 'prmast@projectmast.com' },
+      html: message.replace('\n', '<br />'),
+      replyTo: { name: EmailData.sender, address: EmailData.email },
       subject: `Message From ${EmailData.sender}`,
       text: message,
-      html: message.replace('\n', '<br />'),
+      to: { name: 'Peter Mast', address: 'prmast@projectmast.com' },
     };
 
     return mail;

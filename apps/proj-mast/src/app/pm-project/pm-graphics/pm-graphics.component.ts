@@ -3,8 +3,10 @@ import { Collections, GraphicCollection } from '@proj-mast/api-interface';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
 import { FirestoreService } from '../../shared/firestore.service';
+import { pmFadeInOut } from '../../shared/pm-animation';
 
 @Component({
+  animations: [pmFadeInOut],
   selector: 'pm-graphics',
   templateUrl: './pm-graphics.component.html',
   styleUrls: ['./pm-graphics.component.scss'],

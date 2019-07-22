@@ -4,7 +4,11 @@
     <div class="front">
       <mat-icon>format_quote</mat-icon>
     </div>
-    <div class="middle" fxFlexAlign="center" [@fadeInOut]="message?.id" [innerHtml]="message?.message"></div>
+    <div *ngIf="message; else loading" class="middle" fxFlexAlign="center" [@fadeInOut]="message?.id"
+      [innerHtml]="message?.message"></div>
+    <ng-template #loading>
+      <mat-spinner></mat-spinner>
+    </ng-template>
     <div class="back">
       <mat-icon>format_quote</mat-icon>
     </div>

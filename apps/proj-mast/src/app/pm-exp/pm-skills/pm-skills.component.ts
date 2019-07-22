@@ -3,9 +3,11 @@ import { MatDialog } from '@angular/material';
 import { Skills, SkillCollection, SkillsCollection } from '@proj-mast/api-interface';
 
 import { FirestoreService } from '../../shared/firestore.service';
+import { pmFadeInOut } from '../../shared/pm-animation';
 import { PmSkillComponent } from '../pm-skill/pm-skill.component';
 
 @Component({
+  animations: [pmFadeInOut],
   selector: 'pm-skills',
   templateUrl: './pm-skills.component.html',
   styleUrls: ['./pm-skills.component.scss'],

@@ -3,8 +3,39 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>ProjMast</title>
+  <title>Project Mast</title>
   <base href="/" />
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+    @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .load {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      min-height: 80vh;
+    }
+
+    #loading {
+      display: inline-block;
+      width: 5rem;
+      height: 5rem;
+      border: .25rem solid rgba(0, 200, 83, .2);
+      border-radius: 50%;
+      border-top-color: rgba(0, 200, 83, 1);
+      animation: spin 1.25s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -21,7 +52,12 @@
 
 <body media="screen">
   <pm-root>
-    <div class="load">Loading...</div>
+    <div class="load">
+      <div>
+        <div id="loading"></div>
+        <div>loading ...</div>
+      </div>
+    </div>
   </pm-root>
 </body>
 

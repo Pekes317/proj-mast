@@ -1,17 +1,22 @@
 <mat-card class="code">
   <mat-card-title>Development Work</mat-card-title>
-  <swiper [config]="configSlides">
-    <div class="slide" *ngFor="let slide of webSlides">
-      <figure>
-        <img [src]="slide.pic" [alt]="slide.title">
-        <figcaption>{{ slide.title }}</figcaption>
-      </figure>
-      <div class="desc">
-        <div [innerHtml]="slide.desc"></div>
-        <div>
-          <a mat-button color="primary" [href]="slide.url" target="_blank">Github Repository</a>
+  <swiper [config]="configSlides" [@fadeInOut]="webSlides.length">
+    <ng-container *ngIf="webSlides.length > 0; else loading">
+      <div class="slide" *ngFor="let slide of webSlides">
+        <figure>
+          <img [src]="slide.pic" [alt]="slide.title">
+          <figcaption>{{ slide.title }}</figcaption>
+        </figure>
+        <div class="desc">
+          <div [innerHtml]="slide.desc"></div>
+          <div>
+            <a mat-button color="primary" [href]="slide.url" target="_blank">Github Repository</a>
+          </div>
         </div>
       </div>
-    </div>
+    </ng-container>
+    <ng-template #loading>
+      <mat-spinner></mat-spinner>
+    </ng-template>
   </swiper>
 </mat-card>

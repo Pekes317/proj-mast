@@ -5,18 +5,30 @@
       <mat-nav-list>
         <h3 mat-subheader>Languages</h3>
         <mat-divider></mat-divider>
-        <mat-list-item *ngFor="let code of coding" (click)="skillDets(code)">{{ code.name }}</mat-list-item>
+        <ng-container *ngIf="coding.length > 0; else loading">
+          <mat-list-item [@fadeInOut]="coding.length" *ngFor="let code of coding" (click)="skillDets(code)">
+            {{ code.name }}</mat-list-item>
+        </ng-container>
       </mat-nav-list>
       <mat-nav-list>
         <h3 mat-subheader>Frameworks</h3>
         <mat-divider></mat-divider>
-        <mat-list-item *ngFor="let work of frameworks" (click)="skillDets(work)">{{ work.name }}</mat-list-item>
+        <ng-container *ngIf="frameworks.length > 1; else loading">
+          <mat-list-item [@fadeInOut]="frameworks.length" *ngFor="let work of frameworks" (click)="skillDets(work)">
+            {{ work.name }}</mat-list-item>
+        </ng-container>
       </mat-nav-list>
       <mat-nav-list>
         <h3 mat-subheader>Software/Tools</h3>
         <mat-divider></mat-divider>
-        <mat-list-item *ngFor="let app of apps" (click)="skillDets(app)">{{ app.name }}</mat-list-item>
+        <ng-container *ngIf="apps.length > 1; else loading">
+          <mat-list-item [@fadeInOut]="apps.length" *ngFor="let app of apps" (click)="skillDets(app)">{{ app.name }}
+          </mat-list-item>
+        </ng-container>
       </mat-nav-list>
     </div>
   </mat-card-content>
 </mat-card>
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>
