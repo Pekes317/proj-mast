@@ -17,6 +17,8 @@ import { PmMaterialModule } from './pm-material/pm-material.module';
 import { PmProjectModule } from './pm-project/pm-project.module';
 import { PmSkylineComponent } from './pm-skyline/pm-skyline.component';
 import { PmSocialComponent } from './pm-social/pm-social.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { PmSocialComponent } from './pm-social/pm-social.component';
     PmExpModule,
     PmMaterialModule,
     PmProjectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   entryComponents: [PmContactComponent],
   providers: [],

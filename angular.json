@@ -22,7 +22,7 @@
             "main": "apps/proj-mast/src/main.ts",
             "polyfills": "apps/proj-mast/src/polyfills.ts",
             "tsConfig": "apps/proj-mast/tsconfig.app.json",
-            "assets": ["apps/proj-mast/src/favicon.ico", "apps/proj-mast/src/assets"],
+            "assets": ["apps/proj-mast/src/favicon.ico", "apps/proj-mast/src/assets", "apps/proj-mast/src/manifest.webmanifest"],
             "styles": ["apps/proj-mast/src/styles.scss"],
             "scripts": []
           },
@@ -49,7 +49,9 @@
                   "maximumWarning": "3mb",
                   "maximumError": "5mb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "apps/proj-mast/ngsw-config.json"
             }
           }
         },
