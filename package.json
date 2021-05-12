@@ -72,7 +72,7 @@
     "nodemailer": "^6.3.0",
     "reflect-metadata": "^0.1.12",
     "rxjs": "~6.4.0",
-    "swiper": "^4.5.0",
+    "swiper": "^6.5.1",
     "web-animations-js": "^2.3.2",
     "zone.js": "^0.9.1"
   },
